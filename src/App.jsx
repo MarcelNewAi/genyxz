@@ -6,7 +6,12 @@ import FirstGeneration from './components/FirstGeneration'
 import Footer from './components/Footer'
 import Hero from './components/Hero'
 import LookingFor from './components/LookingFor'
+import MarqueeStrip from './components/MarqueeStrip'
 import Navbar from './components/Navbar'
+import PartnerBar from './components/PartnerBar'
+import ScrollProgress from './components/ScrollProgress'
+import SectionDivider from './components/SectionDivider'
+import StatsSection from './components/StatsSection'
 import StickyBar from './components/StickyBar'
 import WhySection from './components/WhySection'
 import { useScrollReveal } from './utils/useScrollReveal'
@@ -46,12 +51,18 @@ function App() {
 
   return (
     <div className="site-shell">
+      <ScrollProgress />
       <Navbar />
       <Hero />
+      <MarqueeStrip />
       <WhySection />
+      <StatsSection />
+      <SectionDivider />
       <FirstGeneration />
       <ChoosePath />
+      <PartnerBar />
       <Benefits />
+      <SectionDivider />
       <LookingFor />
       <ApplicationForm />
       <Footer />

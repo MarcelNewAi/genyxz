@@ -10,22 +10,24 @@ export function useScrollReveal() {
     elements.forEach((element) => {
       const { revealDelay } = element.dataset
       if (revealDelay) {
-        element.style.transitionDelay = `${revealDelay}ms`
+        element.style.setProperty('--reveal-delay', `${revealDelay}ms`)
       }
     })
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-revealed')
-            observer.unobserve(entry.target)
+          if (!entry.isIntersecting) {
+            return
           }
+
+          entry.target.classList.add('is-revealed')
+          observer.unobserve(entry.target)
         })
       },
       {
         threshold: 0.2,
-        rootMargin: '0px 0px -10% 0px',
+        rootMargin: '0px 0px -8% 0px',
       },
     )
 

@@ -1,22 +1,12 @@
 ﻿import { useEffect, useState } from 'react'
+import { IconArrowUpRight } from './Icons'
 import { useTranslation } from '../utils/useTranslation'
 
 function LogoWordmark() {
   const { t } = useTranslation()
   const title = t('site.title')
-  const gen = title.slice(0, 3)
-  const y = title.slice(3, 4)
-  const x = title.slice(4, 5)
-  const z = title.slice(5, 6)
 
-  return (
-    <span aria-label={title} className="logo-wordmark">
-      <span className="logo-gen">{gen}</span>
-      <span className="logo-y">{y}</span>
-      <span className="logo-x">{x}</span>
-      <span className="logo-z">{z}</span>
-    </span>
-  )
+  return <img alt={title} className="brand-logo" src="/Logo%20-%20GenYXZ.svg" />
 }
 
 export default function Navbar() {
@@ -24,7 +14,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 100)
+    const onScroll = () => setIsScrolled(window.scrollY > 24)
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
@@ -37,11 +27,11 @@ export default function Navbar() {
           <LogoWordmark />
         </a>
 
-        <a className="btn-gradient btn-nav" href="#prijava">
-          {t('site.sticky_cta')}
+        <a className="btn-premium btn-nav" href="#prijava">
+          <span>{t('site.sticky_cta')}</span>
+          <IconArrowUpRight />
         </a>
       </div>
     </header>
   )
 }
-

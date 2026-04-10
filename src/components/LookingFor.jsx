@@ -1,4 +1,5 @@
 ﻿import { useMemo } from 'react'
+import { IconSpark } from './Icons'
 import { useTranslation } from '../utils/useTranslation'
 
 export default function LookingFor() {
@@ -17,26 +18,28 @@ export default function LookingFor() {
   return (
     <section id="koga-iscemo" className="editorial-section section-light">
       <div className="site-container section-narrow">
-        <p className="section-label section-label-light" data-reveal>
+        <p className="section-label section-label-light" data-reveal data-reveal-style="clip">
           {t('labels.koga_iscemo')}
         </p>
-        <h2 className="section-title" data-reveal data-reveal-delay="80">
+        <h2 className="section-title" data-reveal data-reveal-style="up" data-reveal-delay="80">
           {t('koga_iscemo.title')}
         </h2>
-        <p className="section-subtitle" data-reveal data-reveal-delay="140">
+        <p className="section-subtitle" data-reveal data-reveal-style="up" data-reveal-delay="140">
           {t('koga_iscemo.subtitle')}
         </p>
 
-        <ul className="traits-list" data-reveal data-reveal-delay="200">
+        <ul className="traits-list" data-reveal data-reveal-style="up" data-reveal-delay="200">
           {traits.map((trait, index) => (
-            <li key={trait} data-reveal data-reveal-delay={`${240 + index * 80}`}>
-              <span className="trait-dot" aria-hidden="true" />
+            <li key={trait} data-reveal data-reveal-style={index % 2 === 0 ? 'left' : 'right'} data-reveal-delay={`${240 + index * 70}`}>
+              <span className="trait-dot" aria-hidden="true">
+                <IconSpark />
+              </span>
               <span>{trait}</span>
             </li>
           ))}
         </ul>
 
-        <p className="note-callout" data-reveal data-reveal-delay="360">
+        <p className="note-callout" data-reveal data-reveal-style="up" data-reveal-delay="360">
           {t('koga_iscemo.note')}
         </p>
       </div>

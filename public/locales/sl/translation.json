@@ -113,6 +113,36 @@
     "closing_line1": "Ni za vsakogar.",
     "closing_line2": "Če pa čutiš, da je to zate – se prijavi."
   },
+  "marquee": {
+    "aria_label": "Teme programa",
+    "item1": "preventiva",
+    "item2": "sodobna medicina",
+    "item3": "dolgoročna zaščita",
+    "item4": "prihodnost zdravja"
+  },
+  "stats": {
+    "label": "Signal",
+    "title": "Vstopaš v prvo linijo prihodnosti zdravja.",
+    "item1_label": "generacija",
+    "item1_value": 1,
+    "item1_suffix": ".",
+    "item2_label": "razpisanih mest",
+    "item2_value": 120,
+    "item2_suffix": "+",
+    "item3_label": "minute za prijavo",
+    "item3_value": 2,
+    "item3_suffix": " min"
+  },
+  "partners": {
+    "label": "Zaupanje",
+    "title": "Mreža, ki podpira rast projekta.",
+    "name1": "Dr Best",
+    "name2": "Abi Health",
+    "name3": "Further",
+    "name4": "Teladoc",
+    "name5": "GenePlanet",
+    "name6": "Axeria"
+  },
   "cookie": {
     "message": "To spletno mesto uporablja piškotke za boljšo uporabniško izkušnjo.",
     "accept": "Sprejmi",
@@ -126,7 +156,12 @@
     "privacy": "Politika zasebnosti",
     "terms": "Pogoji uporabe",
     "draft_note": "Osnutek — pripravlja ALM Flow",
-    "credit": "Osnutek — pripravlja ALM Flow"
+    "credit": "Osnutek — pripravlja ALM Flow",
+    "links_heading": "Informacije",
+    "social_heading": "Skupnost",
+    "social_1": "Instagram",
+    "social_2": "TikTok",
+    "social_3": "LinkedIn"
   },
   "sections": {
     "hero_label": "01 — POSTANI AMBASADOR",

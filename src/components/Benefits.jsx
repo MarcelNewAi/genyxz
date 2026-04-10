@@ -1,10 +1,13 @@
 ﻿import { useMemo } from 'react'
+import { IconShield, IconSpark } from './Icons'
 import { useTranslation } from '../utils/useTranslation'
 
-function BenefitItem({ text, delay }) {
+function BenefitItem({ text, delay, icon }) {
   return (
-    <li className="benefit-item" data-reveal data-reveal-delay={delay}>
-      <span className="benefit-dash" aria-hidden="true" />
+    <li className="benefit-item" data-reveal data-reveal-style="up" data-reveal-delay={delay}>
+      <span className="benefit-icon" aria-hidden="true">
+        {icon}
+      </span>
       <span>{text}</span>
     </li>
   )
@@ -30,36 +33,36 @@ export default function Benefits() {
   )
 
   return (
-    <section id="kaj-pridobis" className="editorial-section section-surface">
+    <section id="kaj-pridobis" className="editorial-section section-surface section-rhythm-compact">
       <div className="site-container">
-        <p className="section-label section-label-light" data-reveal>
+        <p className="section-label section-label-light" data-reveal data-reveal-style="clip">
           {t('labels.kaj_pridobis')}
         </p>
-        <h2 className="section-title" data-reveal data-reveal-delay="80">
+        <h2 className="section-title" data-reveal data-reveal-style="up" data-reveal-delay="80">
           {t('kaj_pridobis.title')}
         </h2>
-        <p className="section-subtitle" data-reveal data-reveal-delay="140">
+        <p className="section-subtitle" data-reveal data-reveal-style="up" data-reveal-delay="140">
           {t('kaj_pridobis.subtitle')}
         </p>
 
-        <div className="benefits-columns" data-reveal data-reveal-delay="200">
-          <div>
+        <div className="benefits-columns" data-reveal data-reveal-style="up" data-reveal-delay="200">
+          <article className="benefits-card">
             <h3 className="benefits-heading">{t('kaj_pridobis.skills_heading')}</h3>
             <ul className="benefits-list">
               {skills.map((item, index) => (
-                <BenefitItem key={item} delay={`${240 + index * 100}`} text={item} />
+                <BenefitItem key={item} delay={`${240 + index * 80}`} icon={<IconSpark />} text={item} />
               ))}
             </ul>
-          </div>
+          </article>
 
-          <div>
+          <article className="benefits-card benefits-card-accent">
             <h3 className="benefits-heading">{t('kaj_pridobis.benefits_heading')}</h3>
             <ul className="benefits-list">
               {extras.map((item, index) => (
-                <BenefitItem key={item} delay={`${240 + index * 100}`} text={item} />
+                <BenefitItem key={item} delay={`${260 + index * 90}`} icon={<IconShield />} text={item} />
               ))}
             </ul>
-          </div>
+          </article>
         </div>
       </div>
     </section>
