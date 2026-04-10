@@ -17,32 +17,11 @@ function LogoWordmark() {
 export default function Footer() {
   const { t } = useTranslation()
 
-  const partners = [
-    t('partners.name1'),
-    t('partners.name2'),
-    t('partners.name3'),
-    t('partners.name4'),
-    t('partners.name5'),
-    t('partners.name6'),
-  ]
-
   return (
     <footer className="site-footer">
       <div className="footer-line" aria-hidden="true" />
       <div className="site-container">
-        <div className="footer-network" data-reveal data-reveal-style="up">
-          <p className="footer-heading">{t('partners.label')}</p>
-          <p className="footer-network-title">{t('partners.title')}</p>
-          <div className="footer-network-grid">
-            {partners.map((partner) => (
-              <span className="footer-network-item" key={partner}>
-                {partner}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <div className="footer-grid" data-reveal data-reveal-style="up" data-reveal-delay="120">
+        <div className="footer-grid" data-reveal data-reveal-style="up">
           <div className="footer-column footer-brand">
             <LogoWordmark />
             <p className="footer-copy">{t('footer.copyright', { year: new Date().getFullYear() })}</p>
