@@ -1,11 +1,86 @@
 <!doctype html>
-<html lang="en">
+<html lang="sl" dir="ltr">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GenYXZ</title>
+    <meta charset="UTF-8">
+    <title>GenYXZ | Nova generacija, ki razume prihodnost zdravja.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="application-name" content="GenYXZ">
+    <meta name="apple-mobile-web-app-title" content="GenYXZ">
+    <meta name="description" content="Nova generacija, ki razume prihodnost zdravja.">
+    <meta name="author" content="GenYXZ">
+    <meta name="color-scheme" content="dark light">
+    <meta name="robots" content="noindex,follow">
+    <link rel="canonical" href="https://www.genyxz.si/">
+    <link rel="alternate" hreflang="sl" href="https://www.genyxz.si/sl/" />
+    <link rel="alternate" hreflang="lang2" href="https://www.genyxz.si/lang2/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.genyxz.si/sl/" />
+    <link rel="icon" type="image/png" sizes="32x32" href="https://storage.googleapis.com/...">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://storage.googleapis.com/...">
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="GenYXZ" />
+    <meta property="og:title" content="GenYXZ | Nova generacija, ki razume prihodnost zdravja." />
+    <meta property="og:description" content="Nova generacija, ki razume prihodnost zdravja." />
+    <meta property="og:url" content="https://www.genyxz.si/" />
+    <meta property="og:locale" content="sl_SI" />
+    <meta property="og:image" content="https://storage.googleapis.com/..." />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="GenYXZ | Nova generacija, ki razume prihodnost zdravja." />
+    <meta name="twitter:description" content="Nova generacija, ki razume prihodnost zdravja." />
+    <meta name="twitter:image" content="https://storage.googleapis.com/..." />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "GenYXZ",
+        "url": "https://www.genyxz.si/",
+        "logo": "https://storage.googleapis.com/..."
+      }
+    </script>
+    <link rel="preconnect" href="https://storage.googleapis.com">
+    <style>
+      @font-face {
+        font-family: "Poppins";
+        src:
+          local("Poppins"),
+          url("/src/assets/fonts/Poppins-Variable.woff2") format("woff2");
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "Inter";
+        src:
+          local("Inter"),
+          url("/src/assets/fonts/Inter-Variable.woff2") format("woff2");
+        font-display: swap;
+      }
+    </style>
   </head>
   <body>
+    <noscript>
+      <p>GenYXZ works best with JavaScript enabled. Choose your language:</p>
+      <p>
+        <a href="/sl/">Slovenian</a> | <a href="/lang2/">Language 2</a>
+      </p>
+    </noscript>
+    <script>
+      (function redirectByLanguage() {
+        var supported = ['sl', 'lang2']
+        var fallback = 'sl'
+        var language = (navigator.language || '').toLowerCase()
+        var baseCode = language.slice(0, 2)
+        var target = fallback
+
+        if (supported.includes(language)) {
+          target = language
+        } else if (supported.includes(baseCode)) {
+          target = baseCode
+        }
+
+        window.location.replace('/' + target + '/')
+      })()
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
