@@ -1,132 +1,94 @@
-import { useState } from 'react'
-import { useTranslation } from './utils/useTranslation'
+import { useEffect, useMemo, useState } from 'react'
+import ApplicationForm from './components/ApplicationForm'
+import Benefits from './components/Benefits'
+import ChoosePath from './components/ChoosePath'
+import FirstGeneration from './components/FirstGeneration'
+import Footer from './components/Footer'
+import Hero from './components/Hero'
+import LookingFor from './components/LookingFor'
+import Navbar from './components/Navbar'
+import StickyCta from './components/StickyCta'
+import WhySection from './components/WhySection'
+
+const SECTION_IDS = [
+  'hero',
+  'zakaj',
+  'prva-generacija',
+  'izberi-pot',
+  'kaj-pridobis',
+  'koga-iscemo',
+  'prijava',
+]
 
 function App() {
-  const [navOpen, setNavOpen] = useState(false)
-  const { t } = useTranslation()
+  const [activeSection, setActiveSection] = useState('hero')
+  const [showStickyCta, setShowStickyCta] = useState(false)
+
+  const sectionSelector = useMemo(
+    () => SECTION_IDS.map((id) => `#${id}`).join(','),
+    [],
+  )
+
+  useEffect(() => {
+    const heroElement = document.getElementById('hero')
+    if (!heroElement) {
+      return undefined
+    }
+
+    const heroObserver = new IntersectionObserver(
+      ([entry]) => {
+        setShowStickyCta(!entry.isIntersecting)
+      },
+      {
+        threshold: 0.4,
+      },
+    )
+
+    heroObserver.observe(heroElement)
+    return () => heroObserver.disconnect()
+  }, [])
+
+  useEffect(() => {
+    const sections = Array.from(document.querySelectorAll(sectionSelector))
+    if (!sections.length) {
+      return undefined
+    }
+
+    const sectionObserver = new IntersectionObserver(
+      (entries) => {
+        const visibleEntries = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)
+
+        if (visibleEntries.length) {
+          setActiveSection(visibleEntries[0].target.id)
+        }
+      },
+      {
+        rootMargin: '-30% 0px -50% 0px',
+        threshold: [0.2, 0.5, 0.8],
+      },
+    )
+
+    sections.forEach((section) => sectionObserver.observe(section))
+    return () => sectionObserver.disconnect()
+  }, [sectionSelector])
 
   return (
-    <>
-      <header className="site-nav">
-        <div className="site-nav-inner">
-          <a className="nav-brand tap-target" href="#hero">
-            {t('site.title')}
-          </a>
-          <button
-            aria-controls="nav-menu"
-            aria-expanded={navOpen}
-            className="nav-toggle tap-target"
-            onClick={() => setNavOpen((value) => !value)}
-            type="button"
-          >
-            Menu
-          </button>
-          <nav
-            className={`nav-menu ${navOpen ? 'nav-menu-open' : ''}`}
-            id="nav-menu"
-          >
-            <a href="#hero">{t('nav.hero')}</a>
-            <a href="#zakaj">{t('nav.zakaj')}</a>
-            <a href="#prva-generacija">{t('nav.prva-generacija')}</a>
-            <a href="#izberi-pot">{t('nav.izberi-pot')}</a>
-            <a href="#kaj-pridobis">{t('nav.kaj-pridobis')}</a>
-            <a href="#koga-iscemo">{t('nav.koga-iscemo')}</a>
-            <a href="#prijava">{t('nav.prijava')}</a>
-          </nav>
-        </div>
-      </header>
-
-      <main className="mx-auto w-full max-w-5xl overflow-x-clip px-4 pt-28 pb-10 text-text-primary md:px-8">
-        <section id="hero" className="space-y-4">
-          <p className="text-sm font-medium uppercase tracking-wide text-secondary">
-            {t('hero.subtitle')}
-          </p>
-          <h1>
-            {t('hero.title_line1')}
-            <br />
-            {t('hero.title_line2')}
-          </h1>
-          <p className="max-w-2xl text-text-secondary">{t('hero.text')}</p>
-          <p className="max-w-2xl text-sm text-text-secondary">{t('hero.micro_text')}</p>
-          <button className="btn btn-primary" type="button">
-            {t('hero.cta')}
-          </button>
-        </section>
-
-        <section id="zakaj" className="mt-10 space-y-3">
-          <h2>{t('zakaj.title')}</h2>
-          <p className="text-text-secondary">{t('zakaj.text1')}</p>
-          <p className="text-text-secondary">{t('zakaj.text2')}</p>
-          <p className="text-text-secondary">{t('zakaj.text3')}</p>
-        </section>
-
-        <section id="prva-generacija" className="mt-10 space-y-3">
-          <h2>{t('prva_generacija.title')}</h2>
-          <ul className="list-disc space-y-2 pl-5 text-text-secondary">
-            <li>{t('prva_generacija.perk1_title')}</li>
-            <li>{t('prva_generacija.perk2_title')}</li>
-            <li>{t('prva_generacija.perk3_title')}</li>
-            <li>{t('prva_generacija.perk4_title')}</li>
-          </ul>
-        </section>
-
-        <section id="izberi-pot" className="mt-10 space-y-3">
-          <h2>{t('izberi_pot.title')}</h2>
-          <div className="rounded-xl border border-border bg-surface p-4 md:p-6">
-            <h3>{t('izberi_pot.community_title')}</h3>
-            <p className="text-text-secondary">{t('izberi_pot.community_text')}</p>
-            <h3 className="mt-4">{t('izberi_pot.lifestyle_title')}</h3>
-            <p className="text-text-secondary">{t('izberi_pot.lifestyle_text')}</p>
-          </div>
-        </section>
-
-        <section id="kaj-pridobis" className="mt-10 space-y-3">
-          <h2>{t('kaj_pridobis.title')}</h2>
-          <ul className="list-disc space-y-2 pl-5 text-text-secondary">
-            <li>{t('kaj_pridobis.skill1')}</li>
-            <li>{t('kaj_pridobis.skill2')}</li>
-            <li>{t('kaj_pridobis.skill3')}</li>
-            <li>{t('kaj_pridobis.skill4')}</li>
-            <li>{t('kaj_pridobis.skill5')}</li>
-          </ul>
-        </section>
-
-        <section id="koga-iscemo" className="mt-10 space-y-3">
-          <h2>{t('koga_iscemo.title')}</h2>
-          <p className="text-text-secondary">{t('koga_iscemo.subtitle')}</p>
-          <ul className="list-disc space-y-2 pl-5 text-text-secondary">
-            <li>{t('koga_iscemo.trait1')}</li>
-            <li>{t('koga_iscemo.trait2')}</li>
-            <li>{t('koga_iscemo.trait3')}</li>
-            <li>{t('koga_iscemo.trait4')}</li>
-          </ul>
-        </section>
-
-        <section id="prijava" className="mt-10 space-y-3">
-          <h2>{t('prijava.title')}</h2>
-          <p className="text-text-secondary">{t('prijava.micro_text')}</p>
-          <div className="rounded-xl border border-border bg-surface p-4 md:p-6">
-            <label className="form-field">
-              <span className="field-label">{t('prijava.field1_label')}</span>
-              <input
-                className="tap-target"
-                placeholder={t('prijava.field1_placeholder')}
-                type="text"
-              />
-            </label>
-            <label className="form-field mt-3">
-              <span className="field-label">{t('prijava.field4_label')}</span>
-              <input className="tap-target" placeholder={t('prijava.field4_placeholder')} type="text" />
-            </label>
-            <div className="mt-4">
-              <button className="btn btn-secondary" type="button">
-                {t('prijava.cta')}
-              </button>
-            </div>
-          </div>
-        </section>
+    <div className="overflow-x-clip bg-background text-text-primary">
+      <Navbar activeSection={activeSection} />
+      <main className="mx-auto w-full max-w-6xl px-4 pb-20 pt-20 sm:px-6 lg:px-8">
+        <Hero />
+        <WhySection />
+        <FirstGeneration />
+        <ChoosePath />
+        <Benefits />
+        <LookingFor />
+        <ApplicationForm />
       </main>
-    </>
+      <Footer />
+      <StickyCta show={showStickyCta} />
+    </div>
   )
 }
 

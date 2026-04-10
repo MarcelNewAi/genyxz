@@ -1,106 +1,112 @@
 {
-  "site": {
-    "title": "GenYXZ",
-    "tagline": "Nova generacija, ki razume prihodnost zdravja.",
-    "description": "Gradimo novo generacijo, ki razume prihodnost zdravja in jo zna pribliûati ljudem."
-  },
-  "nav": {
-    "hero": "Hero",
-    "zakaj": "Zakaj to obstaja",
-    "prva-generacija": "Prva generacija",
-    "izberi-pot": "Izberi svojo pot",
-    "kaj-pridobis": "Kaj pridobiö",
-    "koga-iscemo": "Koga iöËemo",
-    "prijava": "Prijava"
-  },
-  "hero": {
-    "title_line1": "VeËina ötudentskih sluûb ti da denar.",
-    "title_line2": "Ta ti lahko da prihodnost.",
-    "subtitle": "Postani del 1. generacije GenYXZ / DR BEST ambasadorjev.",
-    "text": "Gradimo novo generacijo, ki razume prihodnost zdravja ñ in jo zna pribliûati ljudem.",
-    "cta": "Prijavi se (2 minuti)",
-    "micro_text": "Brez CV-ja. Samo 3 kratka vpraöanja."
-  },
-  "zakaj": {
-    "label": "Zakaj to obstaja",
-    "title": "Zakaj to obstaja",
-    "text1": "éivimo v Ëasu, ko se tehnologija razvija hitreje kot naöe telo.",
-    "text2": "Reöitve za boljöe zdravje ûe obstajajo.",
-    "text3": "VeËina ljudi jih ne pozna ñ ali pa jih ne razume. Zato gradimo generacijo, ki bo znala povezati znanje, ljudi in prihodnost zdravja."
-  },
-  "prva_generacija": {
-    "label": "Prva generacija",
-    "title": "Postani del prve generacije.",
-    "perk1_title": "Soustvarjaö projekt od zaËetka",
-    "perk1_text": "Kot del prve ekipe postavljaö temelje in usmerjaö razvoj projekta.",
-    "perk2_title": "Sodelujeö neposredno z ustanovitelji",
-    "perk2_text": "Dobiö neposreden stik, mentorstvo in jasen vpogled v öiröo vizijo.",
-    "perk3_title": "Vplivaö na razvoj skupnosti",
-    "perk3_text": "S svojimi idejami pomagaö graditi kulturo in naËin delovanja skupnosti.",
-    "perk4_title": "Postaneö mentor prihodnjim generacijam",
-    "perk4_text": "Znanje in izkuönje preneseö naprej ter soustvariö naslednje ambasadorje.",
-    "closing_line1": "To ni vloga.",
-    "closing_line2": "To je priloûnost, da pustiö svoj peËat."
-  },
-  "izberi_pot": {
-    "label": "Izberi svojo pot",
-    "title": "Izberi smer, ki ti je bliûje.",
-    "community_title": "Community Ambassador",
-    "community_text": "Delo z ljudmi, druûinami in lokalnim okoljem. Gradnja zaupanja in odnosov.",
-    "lifestyle_title": "Lifestyle Ambassador",
-    "lifestyle_text": "äport, zdravje, sodelovanje s trenerji in strokovnjaki. Povezovanje lifestyle-a in preventive."
-  },
-  "kaj_pridobis": {
-    "label": "Kaj pridobiö",
-    "title": "Ne samo izkuönje. Konkretne veöËine.",
-    "subtitle": "Razvoj, ki ga lahko uporabiö takoj.",
-    "skill1": "kako samozavestno pristopiti do ljudi",
-    "skill2": "kako predstaviti idejo na jasen in zanimiv naËin",
-    "skill3": "kako organizirati manjöi dogodek ali predstavitev",
-    "skill4": "kako zgraditi svojo mreûo kontaktov",
-    "skill5": "kako razmiöljati bolj podjetniöko",
-    "benefit1": "fleksibilno ötudentsko delo",
-    "benefit2": "mentorska podpora",
-    "benefit3": "okolje ambicioznih ljudi"
-  },
-  "koga_iscemo": {
-    "label": "Koga iöËemo",
-    "title": "Ne iöËemo popolnih.",
-    "subtitle": "IöËemo ötudente, ki:",
-    "trait1": "imajo ambicijo",
-    "trait2": "radi delajo z ljudmi",
-    "trait3": "jih zanima zdravje, öport ali osebni razvoj",
-    "trait4": "ûelijo veË kot samo ötudentsko delo",
-    "note": "Predhodne izkuönje niso potrebne."
-  },
-  "prijava": {
-    "label": "Prijava",
-    "title": "Prijava (2 minuti)",
-    "micro_text": "Brez CV-ja. Samo 3 kratka vpraöanja.",
-    "field1_label": "Zakaj ûeliö postati ambasador?",
-    "field1_placeholder": "Na katerih podroËjih se vidiö ñ zdravje, öport, delo z ljudmi Ö",
-    "field2_label": "Kaj te trenutno najbolj zanima ali motivira?",
-    "field2_placeholder": "Hobiji, interesi",
-    "field3_label": "Katera pot ti je bliûje?",
-    "field3_option1": "Community",
-    "field3_option2": "Lifestyle",
-    "field4_label": "Email / telefon",
-    "field4_placeholder": "Vnesi email ali telefonsko ötevilko",
-    "cta": "Poölji prijavo",
-    "closing_line1": "Ni za vsakogar.",
-    "closing_line2": "»e pa Ëutiö, da je to zate ñ se prijavi."
-  },
-  "cookie": {
-    "message": "To spletno mesto uporablja piökotke za boljöo uporabniöko izkuönjo.",
-    "accept": "Sprejmi",
-    "decline": "Zavrni",
-    "settings": "Nastavitve",
-    "necessary": "Nujni",
-    "save_preferences": "Shrani nastavitve"
-  },
-  "footer": {
-    "copyright": "© {{year}} GenYXZ.",
-    "privacy": "Politika zasebnosti",
-    "terms": "Pogoji uporabe"
-  }
+    "site":  {
+                 "title":  "GenYXZ",
+                 "tagline":  "Nova generacija, ki razume prihodnost zdravja.",
+                 "description":  "Gradimo novo generacijo, ki razume prihodnost zdravja in jo zna pribli≈æati ljudem.",
+                 "sticky_cta":  "Prijavi se"
+             },
+    "nav":  {
+                "hero":  "Hero",
+                "zakaj":  "Zakaj to obstaja",
+                "prva-generacija":  "Prva generacija",
+                "izberi-pot":  "Izberi svojo pot",
+                "kaj-pridobis":  "Kaj pridobi≈°",
+                "koga-iscemo":  "Koga i≈°ƒçemo",
+                "prijava":  "Prijava",
+                "menu_label":  "Navigacija",
+                "menu_open":  "Odpri meni",
+                "menu_close":  "Zapri meni"
+            },
+    "hero":  {
+                 "title_line1":  "Veƒçina ≈°tudentskih slu≈æb ti da denar.",
+                 "title_line2":  "Ta ti lahko da prihodnost.",
+                 "subtitle":  "Postani del 1. generacije GenYXZ / DR BEST ambasadorjev.",
+                 "text":  "Gradimo novo generacijo, ki razume prihodnost zdravja ‚Äì in jo zna pribli≈æati ljudem.",
+                 "cta":  "Prijavi se (2 minuti)",
+                 "micro_text":  "Brez CV-ja. Samo 3 kratka vpra≈°anja."
+             },
+    "zakaj":  {
+                  "label":  "Zakaj to obstaja",
+                  "title":  "Zakaj to obstaja",
+                  "text1":  "≈Ωivimo v ƒçasu, ko se tehnologija razvija hitreje kot na≈°e telo.",
+                  "text2":  "Re≈°itve za bolj≈°e zdravje ≈æe obstajajo.",
+                  "text3":  "Veƒçina ljudi jih ne pozna ‚Äì ali pa jih ne razume. Zato gradimo generacijo, ki bo znala povezati znanje, ljudi in prihodnost zdravja."
+              },
+    "prva_generacija":  {
+                            "label":  "Prva generacija",
+                            "title":  "Postani del prve generacije.",
+                            "perk1_title":  "Soustvarja≈° projekt od zaƒçetka",
+                            "perk1_text":  "Kot del prve ekipe postavlja≈° temelje in usmerja≈° razvoj projekta.",
+                            "perk2_title":  "Sodeluje≈° neposredno z ustanovitelji",
+                            "perk2_text":  "Dobi≈° neposreden stik, mentorstvo in jasen vpogled v ≈°ir≈°o vizijo.",
+                            "perk3_title":  "Vpliva≈° na razvoj skupnosti",
+                            "perk3_text":  "S svojimi idejami pomaga≈° graditi kulturo in naƒçin delovanja skupnosti.",
+                            "perk4_title":  "Postane≈° mentor prihodnjim generacijam",
+                            "perk4_text":  "Znanje in izku≈°nje prenese≈° naprej ter soustvari≈° naslednje ambasadorje.",
+                            "closing_line1":  "To ni vloga.",
+                            "closing_line2":  "To je prilo≈ænost, da pusti≈° svoj peƒçat."
+                        },
+    "izberi_pot":  {
+                       "label":  "Izberi svojo pot",
+                       "title":  "Izberi smer, ki ti je bli≈æje.",
+                       "community_title":  "Community Ambassador",
+                       "community_text":  "Delo z ljudmi, dru≈æinami in lokalnim okoljem. Gradnja zaupanja in odnosov.",
+                       "lifestyle_title":  "Lifestyle Ambassador",
+                       "lifestyle_text":  "≈†port, zdravje, sodelovanje s trenerji in strokovnjaki. Povezovanje lifestyle-a in preventive."
+                   },
+    "kaj_pridobis":  {
+                         "label":  "Kaj pridobi≈°",
+                         "title":  "Ne samo izku≈°nje. Konkretne ve≈°ƒçine.",
+                         "subtitle":  "Razvoj, ki ga lahko uporabi≈° takoj.",
+                         "skill1":  "kako samozavestno pristopiti do ljudi",
+                         "skill2":  "kako predstaviti idejo na jasen in zanimiv naƒçin",
+                         "skill3":  "kako organizirati manj≈°i dogodek ali predstavitev",
+                         "skill4":  "kako zgraditi svojo mre≈æo kontaktov",
+                         "skill5":  "kako razmi≈°ljati bolj podjetni≈°ko",
+                         "benefit1":  "fleksibilno ≈°tudentsko delo",
+                         "benefit2":  "mentorska podpora",
+                         "benefit3":  "okolje ambicioznih ljudi",
+                         "skills_label":  "Ve≈°ƒçine",
+                         "benefits_label":  "Kaj dobi≈° zraven"
+                     },
+    "koga_iscemo":  {
+                        "label":  "Koga i≈°ƒçemo",
+                        "title":  "Ne i≈°ƒçemo popolnih.",
+                        "subtitle":  "I≈°ƒçemo ≈°tudente, ki:",
+                        "trait1":  "imajo ambicijo",
+                        "trait2":  "radi delajo z ljudmi",
+                        "trait3":  "jih zanima zdravje, ≈°port ali osebni razvoj",
+                        "trait4":  "≈æelijo veƒç kot samo ≈°tudentsko delo",
+                        "note":  "Predhodne izku≈°nje niso potrebne."
+                    },
+    "prijava":  {
+                    "label":  "Prijava",
+                    "title":  "Prijava (2 minuti)",
+                    "micro_text":  "Brez CV-ja. Samo 3 kratka vpra≈°anja.",
+                    "field1_label":  "Zakaj ≈æeli≈° postati ambasador?",
+                    "field1_placeholder":  "Na katerih podroƒçjih se vidi≈° ‚Äì zdravje, ≈°port, delo z ljudmi ‚Ä¶",
+                    "field2_label":  "Kaj te trenutno najbolj zanima ali motivira?",
+                    "field2_placeholder":  "Hobiji, interesi",
+                    "field3_label":  "Katera pot ti je bli≈æje?",
+                    "field3_option1":  "Community",
+                    "field3_option2":  "Lifestyle",
+                    "field4_label":  "Email / telefon",
+                    "field4_placeholder":  "Vnesi email ali telefonsko ≈°tevilko",
+                    "cta":  "Po≈°lji prijavo",
+                    "closing_line1":  "Ni za vsakogar.",
+                    "closing_line2":  "ƒåe pa ƒçuti≈°, da je to zate ‚Äì se prijavi."
+                },
+    "cookie":  {
+                   "message":  "To spletno mesto uporablja pi≈°kotke za bolj≈°o uporabni≈°ko izku≈°njo.",
+                   "accept":  "Sprejmi",
+                   "decline":  "Zavrni",
+                   "settings":  "Nastavitve",
+                   "necessary":  "Nujni",
+                   "save_preferences":  "Shrani nastavitve"
+               },
+    "footer":  {
+                   "copyright":  "¬© {{year}} GenYXZ.",
+                   "privacy":  "Politika zasebnosti",
+                   "terms":  "Pogoji uporabe"
+               }
 }
