@@ -53,16 +53,6 @@ export function IconSpark() {
   )
 }
 
-export function IconOrbit() {
-  return (
-    <svg aria-hidden="true" className="icon" viewBox="0 0 24 24" fill="none">
-      <circle cx="12" cy="12" r="2.4" fill="currentColor" />
-      <ellipse cx="12" cy="12" rx="8" ry="3.8" stroke="currentColor" strokeWidth="1.4" />
-      <ellipse cx="12" cy="12" rx="8" ry="3.8" stroke="currentColor" strokeWidth="1.4" transform="rotate(60 12 12)" />
-    </svg>
-  )
-}
-
 export function IconSocial() {
   return (
     <svg aria-hidden="true" className="icon" viewBox="0 0 24 24" fill="none">
@@ -70,6 +60,54 @@ export function IconSocial() {
       <path d="M8 14c1.2 1.2 2.5 1.8 4 1.8s2.8-.6 4-1.8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
       <circle cx="9.2" cy="10" r="1" fill="currentColor" />
       <circle cx="14.8" cy="10" r="1" fill="currentColor" />
+    </svg>
+  )
+}
+
+export function IconPrivacy() {
+  return (
+    <svg aria-hidden="true" className="icon" viewBox="0 0 24 24" fill="none">
+      <rect x="6" y="10" width="12" height="9" rx="2" stroke="currentColor" strokeWidth="1.6" />
+      <path d="M9 10V8a3 3 0 1 1 6 0v2" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  )
+}
+
+export function IconTerms() {
+  return (
+    <svg aria-hidden="true" className="icon" viewBox="0 0 24 24" fill="none">
+      <rect x="6" y="4" width="12" height="16" rx="2" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M9 9h6M9 13h6M9 17h4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  )
+}
+
+export function IconInstagram() {
+  return (
+    <svg aria-hidden="true" className="icon" viewBox="0 0 24 24" fill="none">
+      <rect x="5" y="5" width="14" height="14" rx="4" stroke="currentColor" strokeWidth="1.6" />
+      <circle cx="12" cy="12" r="3.2" stroke="currentColor" strokeWidth="1.6" />
+      <circle cx="16.6" cy="7.4" r="0.9" fill="currentColor" />
+    </svg>
+  )
+}
+
+export function IconTiktok() {
+  return (
+    <svg aria-hidden="true" className="icon" viewBox="0 0 24 24" fill="none">
+      <path d="M14 5v8.8a3.8 3.8 0 1 1-2.8-3.7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+      <path d="M14 6c1.1 1.5 2.4 2.2 4 2.2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+    </svg>
+  )
+}
+
+export function IconLinkedIn() {
+  return (
+    <svg aria-hidden="true" className="icon" viewBox="0 0 24 24" fill="none">
+      <rect x="5" y="9" width="3" height="10" stroke="currentColor" strokeWidth="1.5" />
+      <circle cx="6.5" cy="6.5" r="1.2" fill="currentColor" />
+      <path d="M11 19v-6.2c0-1.8 1.2-3 2.8-3s2.7 1.1 2.7 3V19" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M11 12.3V9h3v1.8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
     </svg>
   )
 }

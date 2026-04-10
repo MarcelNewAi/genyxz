@@ -26,9 +26,6 @@ export default function Hero() {
   return (
     <section id="hero" className="hero-section editorial-section section-light">
       <div className="hero-atmosphere" aria-hidden="true">
-        <span className="hero-blob hero-blob-1" />
-        <span className="hero-blob hero-blob-2" />
-        <span className="hero-blob hero-blob-3" />
         <span className="hero-grid-overlay" />
       </div>
 
@@ -56,13 +53,22 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="hero-visual" data-reveal data-reveal-style="right" data-reveal-delay="220" aria-hidden="true">
-          <div className="hero-orbit hero-orbit-a" />
-          <div className="hero-orbit hero-orbit-b" />
-          <div className="hero-core" />
-          <div className="hero-dot hero-dot-a" />
-          <div className="hero-dot hero-dot-b" />
-          <div className="hero-dot hero-dot-c" />
+        <div className="hero-visual hero-signal-board" data-reveal data-reveal-style="right" data-reveal-delay="220" aria-hidden="true">
+          <div className="signal-track signal-track-a">
+            <span className="signal-runner" />
+          </div>
+          <div className="signal-track signal-track-b">
+            <span className="signal-runner" />
+          </div>
+          <div className="signal-track signal-track-c">
+            <span className="signal-runner" />
+          </div>
+          <div className="signal-bars">
+            <span className="signal-bar signal-bar-1" />
+            <span className="signal-bar signal-bar-2" />
+            <span className="signal-bar signal-bar-3" />
+            <span className="signal-bar signal-bar-4" />
+          </div>
         </div>
       </div>
     </section>

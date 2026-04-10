@@ -1,27 +1,8 @@
-﻿import { useMemo } from 'react'
-import { IconNetwork, IconOrbit } from './Icons'
+﻿import { IconNetwork, IconSpark } from './Icons'
 import { useTranslation } from '../utils/useTranslation'
 
 export default function ChoosePath() {
   const { t } = useTranslation()
-
-  const cards = useMemo(
-    () => [
-      {
-        title: t('izberi_pot.community_title'),
-        text: t('izberi_pot.community_text'),
-        icon: IconNetwork,
-        accentClass: 'path-accent-community',
-      },
-      {
-        title: t('izberi_pot.lifestyle_title'),
-        text: t('izberi_pot.lifestyle_text'),
-        icon: IconOrbit,
-        accentClass: 'path-accent-lifestyle',
-      },
-    ],
-    [t],
-  )
 
   return (
     <section id="izberi-pot" className="editorial-section section-light">
@@ -33,28 +14,28 @@ export default function ChoosePath() {
           {t('izberi_pot.title')}
         </h2>
 
-        <div className="path-grid" data-reveal data-reveal-style="up" data-reveal-delay="150">
-          {cards.map((card, index) => {
-            const CardIcon = card.icon
+        <div className="path-flow" data-reveal data-reveal-style="up" data-reveal-delay="150">
+          <article className="path-row path-row-community" data-reveal data-reveal-style="left" data-reveal-delay="220">
+            <span className="path-row-icon" aria-hidden="true">
+              <IconNetwork />
+            </span>
+            <div className="path-row-content">
+              <h3 className="path-title">{t('izberi_pot.community_title')}</h3>
+              <p className="path-text">{t('izberi_pot.community_text')}</p>
+            </div>
+            <span className="path-row-line" aria-hidden="true" />
+          </article>
 
-            return (
-              <article
-                key={card.title}
-                className="path-panel"
-                data-reveal
-                data-reveal-style={index % 2 === 0 ? 'left' : 'right'}
-                data-reveal-delay={`${220 + index * 100}`}
-              >
-                <span className={`path-accent ${card.accentClass}`} aria-hidden="true" />
-                <span className="path-icon" aria-hidden="true">
-                  <CardIcon />
-                </span>
-                <h3 className="path-title">{card.title}</h3>
-                <p className="path-text">{card.text}</p>
-                <span className="path-sheen" aria-hidden="true" />
-              </article>
-            )
-          })}
+          <article className="path-row path-row-lifestyle" data-reveal data-reveal-style="right" data-reveal-delay="320">
+            <span className="path-row-icon" aria-hidden="true">
+              <IconSpark />
+            </span>
+            <div className="path-row-content">
+              <h3 className="path-title">{t('izberi_pot.lifestyle_title')}</h3>
+              <p className="path-text">{t('izberi_pot.lifestyle_text')}</p>
+            </div>
+            <span className="path-row-line" aria-hidden="true" />
+          </article>
         </div>
       </div>
     </section>

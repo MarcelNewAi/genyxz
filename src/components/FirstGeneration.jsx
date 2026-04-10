@@ -19,8 +19,6 @@ export default function FirstGeneration() {
     <section id="prva-generacija" className="editorial-section section-dark-gradient">
       <div className="dark-atmosphere" aria-hidden="true">
         <span className="dark-grid" />
-        <span className="dark-glow dark-glow-top" />
-        <span className="dark-glow dark-glow-bottom" />
         <span className="dark-line dark-line-a" />
         <span className="dark-line dark-line-b" />
       </div>
