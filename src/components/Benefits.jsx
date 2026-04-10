@@ -1,6 +1,15 @@
 ﻿import { useMemo } from 'react'
 import { useTranslation } from '../utils/useTranslation'
 
+function BenefitItem({ text, delay }) {
+  return (
+    <li className="benefit-item" data-reveal data-reveal-delay={delay}>
+      <span className="benefit-dash" aria-hidden="true" />
+      <span>{text}</span>
+    </li>
+  )
+}
+
 export default function Benefits() {
   const { t } = useTranslation()
 
@@ -21,39 +30,33 @@ export default function Benefits() {
   )
 
   return (
-    <section id="kaj-pridobis" className="editorial-section section-white">
+    <section id="kaj-pridobis" className="editorial-section section-surface">
       <div className="site-container">
-        <p className="section-label section-label-mint" data-reveal>
-          {t('sections.kaj_label')}
+        <p className="section-label section-label-light" data-reveal>
+          {t('labels.kaj_pridobis')}
         </p>
         <h2 className="section-title" data-reveal data-reveal-delay="80">
           {t('kaj_pridobis.title')}
         </h2>
-        <p className="section-subtitle" data-reveal data-reveal-delay="130">
+        <p className="section-subtitle" data-reveal data-reveal-delay="140">
           {t('kaj_pridobis.subtitle')}
         </p>
 
-        <div className="benefits-grid">
-          <div data-reveal data-reveal-delay="170">
-            <h3 className="column-heading">{t('kaj_pridobis.skills_label')}</h3>
-            <ul className="clean-list">
+        <div className="benefits-columns" data-reveal data-reveal-delay="200">
+          <div>
+            <h3 className="benefits-heading">{t('kaj_pridobis.skills_heading')}</h3>
+            <ul className="benefits-list">
               {skills.map((item, index) => (
-                <li key={item} data-reveal data-reveal-delay={`${220 + index * 100}`}>
-                  <span aria-hidden="true">—</span>
-                  {item}
-                </li>
+                <BenefitItem key={item} delay={`${240 + index * 100}`} text={item} />
               ))}
             </ul>
           </div>
 
-          <div data-reveal data-reveal-delay="170">
-            <h3 className="column-heading">{t('kaj_pridobis.benefits_label')}</h3>
-            <ul className="clean-list">
+          <div>
+            <h3 className="benefits-heading">{t('kaj_pridobis.benefits_heading')}</h3>
+            <ul className="benefits-list">
               {extras.map((item, index) => (
-                <li key={item} data-reveal data-reveal-delay={`${220 + index * 100}`}>
-                  <span aria-hidden="true">—</span>
-                  {item}
-                </li>
+                <BenefitItem key={item} delay={`${240 + index * 100}`} text={item} />
               ))}
             </ul>
           </div>

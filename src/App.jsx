@@ -7,12 +7,12 @@ import Footer from './components/Footer'
 import Hero from './components/Hero'
 import LookingFor from './components/LookingFor'
 import Navbar from './components/Navbar'
-import StickyCta from './components/StickyCta'
+import StickyBar from './components/StickyBar'
 import WhySection from './components/WhySection'
 import { useScrollReveal } from './utils/useScrollReveal'
 
 function App() {
-  const [isPastHero, setIsPastHero] = useState(false)
+  const [showStickyBar, setShowStickyBar] = useState(false)
   const [isInApplication, setIsInApplication] = useState(false)
 
   useScrollReveal()
@@ -26,16 +26,12 @@ function App() {
     }
 
     const heroObserver = new IntersectionObserver(
-      ([entry]) => {
-        setIsPastHero(!entry.isIntersecting)
-      },
+      ([entry]) => setShowStickyBar(!entry.isIntersecting),
       { threshold: 0.45 },
     )
 
     const applicationObserver = new IntersectionObserver(
-      ([entry]) => {
-        setIsInApplication(entry.isIntersecting)
-      },
+      ([entry]) => setIsInApplication(entry.isIntersecting),
       { threshold: 0.35 },
     )
 
@@ -59,7 +55,7 @@ function App() {
       <LookingFor />
       <ApplicationForm />
       <Footer />
-      <StickyCta show={isPastHero && !isInApplication} />
+      <StickyBar show={showStickyBar && !isInApplication} />
     </div>
   )
 }

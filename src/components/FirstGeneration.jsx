@@ -15,38 +15,37 @@ export default function FirstGeneration() {
   )
 
   return (
-    <section id="prva-generacija" className="editorial-section section-dark">
-      <div className="site-container">
-        <p className="section-label section-label-lime" data-reveal>
-          {t('sections.prva_label')}
+    <section id="prva-generacija" className="editorial-section section-dark-gradient">
+      <div className="dark-glow dark-glow-top" aria-hidden="true" />
+      <div className="dark-glow dark-glow-bottom" aria-hidden="true" />
+
+      <div className="site-container section-narrow-wide">
+        <p className="section-label section-label-dark" data-reveal>
+          {t('labels.prva_generacija')}
         </p>
-        <h2 className="section-title section-title-dark" data-reveal data-reveal-delay="80">
+        <h2 className="section-title section-title-on-dark" data-reveal data-reveal-delay="80">
           {t('prva_generacija.title')}
         </h2>
-        <p className="dark-intro" data-reveal data-reveal-delay="130">
+        <p className="dark-intro" data-reveal data-reveal-delay="140">
           {t('prva_generacija.intro_line')}
         </p>
 
-        <ul className="perk-grid" data-reveal data-reveal-delay="180">
+        <ul className="perk-list" data-reveal data-reveal-delay="200">
           {perks.map((perk, index) => (
-            <li key={perk.title} className="perk-item">
-              <p className="perk-title">
-                <span className="perk-bullet" aria-hidden="true">
-                  {index + 1}.
-                </span>
-                {perk.title}
-              </p>
-              <p className="perk-text">{perk.text}</p>
+            <li key={perk.title} className="perk-entry" data-reveal data-reveal-delay={`${260 + index * 80}`}>
+              <p className="perk-number">{String(index + 1).padStart(2, '0')}</p>
+              <h3 className="perk-title">{perk.title}</h3>
+              <p className="perk-description">{perk.text}</p>
             </li>
           ))}
         </ul>
 
-        <blockquote className="pull-quote" data-reveal data-reveal-delay="240">
+        <p className="pull-quote" data-reveal data-reveal-delay="420">
           {t('prva_generacija.closing_line1')} {t('prva_generacija.closing_line2')}
-        </blockquote>
+        </p>
 
-        <a className="dark-outline-cta" href="#prijava" data-reveal data-reveal-delay="300">
-          {t('hero.cta')}
+        <a className="btn-outline-dark" href="#prijava" data-reveal data-reveal-delay="500">
+          {t('hero.cta')} <span aria-hidden="true">→</span>
         </a>
       </div>
     </section>

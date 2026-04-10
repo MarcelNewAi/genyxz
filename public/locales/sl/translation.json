@@ -6,6 +6,18 @@
     "sticky_cta": "Prijavi se",
     "sticky_bar": "Prijavi se — traja 2 minuti"
   },
+  "sticky": {
+    "text": "Prijavi se — traja 2 minuti"
+  },
+  "labels": {
+    "hero": "01 — Postani ambasador",
+    "zakaj": "02 — Zakaj to obstaja",
+    "prva_generacija": "03 — Prva generacija",
+    "izberi_pot": "04 — Izberi svojo pot",
+    "kaj_pridobis": "05 — Kaj pridobiš",
+    "koga_iscemo": "06 — Koga iščemo",
+    "prijava": "07 — Prijava"
+  },
   "nav": {
     "hero": "Hero",
     "zakaj": "Zakaj to obstaja",
@@ -63,6 +75,8 @@
     "subtitle": "Razvoj, ki ga lahko uporabiš takoj.",
     "skills_label": "Veščine",
     "benefits_label": "Kaj dobiš zraven",
+    "skills_heading": "Veščine",
+    "benefits_heading": "Kaj dobiš zraven",
     "skill1": "kako samozavestno pristopiti do ljudi",
     "skill2": "kako predstaviti idejo na jasen in zanimiv način",
     "skill3": "kako organizirati manjši dogodek ali predstavitev",
@@ -111,7 +125,8 @@
     "copyright": "© {{year}} GenYXZ.",
     "privacy": "Politika zasebnosti",
     "terms": "Pogoji uporabe",
-    "draft_note": "Osnutek — pripravlja ALM Flow"
+    "draft_note": "Osnutek — pripravlja ALM Flow",
+    "credit": "Osnutek — pripravlja ALM Flow"
   },
   "sections": {
     "hero_label": "01 — POSTANI AMBASADOR",

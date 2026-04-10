@@ -9,11 +9,11 @@ function LogoWordmark() {
   const z = title.slice(5, 6)
 
   return (
-    <span aria-label={title} className="font-heading text-xl font-extrabold tracking-[-0.02em]">
-      <span className="text-[#F0F4F8]">{gen}</span>
-      <span className="text-[#C218D8]">{y}</span>
-      <span className="text-[#3B82F6]">{x}</span>
-      <span className="text-[#14B8A6]">{z}</span>
+    <span aria-label={title} className="logo-wordmark logo-wordmark-footer">
+      <span className="logo-gen-footer">{gen}</span>
+      <span className="logo-y">{y}</span>
+      <span className="logo-x">{x}</span>
+      <span className="logo-z">{z}</span>
     </span>
   )
 }
@@ -23,7 +23,8 @@ export default function Footer() {
 
   return (
     <footer className="site-footer">
-      <div className="site-container footer-row" data-reveal>
+      <div className="footer-line" aria-hidden="true" />
+      <div className="site-container footer-top" data-reveal>
         <LogoWordmark />
         <p className="footer-copy">{t('footer.copyright', { year: new Date().getFullYear() })}</p>
         <div className="footer-links">
@@ -31,7 +32,7 @@ export default function Footer() {
           <a href="#terms">{t('footer.terms')}</a>
         </div>
       </div>
-      <p className="footer-draft">{t('footer.draft_note')}</p>
+      <p className="footer-credit">{t('footer.credit')}</p>
     </footer>
   )
 }
