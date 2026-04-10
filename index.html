@@ -8,11 +8,10 @@
     <meta name="apple-mobile-web-app-title" content="GenYXZ">
     <meta name="description" content="Nova generacija, ki razume prihodnost zdravja.">
     <meta name="author" content="GenYXZ">
-    <meta name="color-scheme" content="dark light">
+    <meta name="color-scheme" content="light">
     <meta name="robots" content="noindex,follow">
     <link rel="canonical" href="https://www.genyxz.si/">
     <link rel="alternate" hreflang="sl" href="https://www.genyxz.si/sl/" />
-    <link rel="alternate" hreflang="lang2" href="https://www.genyxz.si/lang2/" />
     <link rel="alternate" hreflang="x-default" href="https://www.genyxz.si/sl/" />
     <link rel="icon" type="image/png" sizes="32x32" href="https://storage.googleapis.com/...">
     <link rel="apple-touch-icon" sizes="180x180" href="https://storage.googleapis.com/...">
@@ -59,28 +58,9 @@
   </head>
   <body>
     <noscript>
-      <p>GenYXZ works best with JavaScript enabled. Choose your language:</p>
-      <p>
-        <a href="/sl/">Slovenian</a> | <a href="/lang2/">Language 2</a>
-      </p>
+      <p>GenYXZ deluje najbolje z omogočenim JavaScriptom.</p>
+      <p><a href="/sl/">Slovenian</a></p>
     </noscript>
-    <script>
-      (function redirectByLanguage() {
-        var supported = ['sl', 'lang2']
-        var fallback = 'sl'
-        var language = (navigator.language || '').toLowerCase()
-        var baseCode = language.slice(0, 2)
-        var target = fallback
-
-        if (supported.includes(language)) {
-          target = language
-        } else if (supported.includes(baseCode)) {
-          target = baseCode
-        }
-
-        window.location.replace('/' + target + '/')
-      })()
-    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

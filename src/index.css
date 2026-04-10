@@ -46,6 +46,7 @@
   }
 
   html {
+    scroll-behavior: smooth;
     overflow-x: clip;
     scrollbar-width: thin;
     scrollbar-color: var(--color-secondary) var(--color-surface);

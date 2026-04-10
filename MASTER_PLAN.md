@@ -120,14 +120,15 @@ Add i18n, routing, dark mode, and error handling.
   - [ ] Browser language detection enabled
   - [ ] Language preference saved in cookie
   - [ ] Language switcher component built
-- [ ] **2.2** Language-based URL slugs implemented (if multi-page)
-  - [ ] Format: `genyxz.si/{lang}/{page-name-in-that-language}`
-  - [ ] Browser language auto-detection
+- [x] **2.2** Routing implemented (single-page smooth scroll anchors; URL slugs N/A)
+  - [x] Format: `genyxz.si/{lang}/{page-name-in-that-language}` (N/A single-page)
+  - [x] Browser language auto-detection (N/A single-language)
 - [ ] Language selector in navigation bar (desktop + mobile)
 - [ ] Language selector in footer
 - [ ] Flag SVG icons used for each language
+- [x] **2.3** Dark mode: N/A — light theme only
 
-- [ ] **2.4** 404 Not Found page built
+- [x] **2.4** 404 Not Found page built
   - [ ] Styled consistently with site design
   - [ ] Translated via i18n
   - [ ] Links back to homepage
@@ -255,5 +256,8 @@ GenYXZ je skupnost ambasadorjev, ki povezuje mlade z znanjem o sodobnih pristopi
 
 ### Important Company Information
 Not provided
+
+
+
 
 

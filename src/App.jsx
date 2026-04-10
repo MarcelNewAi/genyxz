@@ -60,6 +60,48 @@ function App() {
           <p className="text-text-secondary">{t('zakaj.text3')}</p>
         </section>
 
+        <section id="prva-generacija" className="mt-10 space-y-3">
+          <h2>{t('prva_generacija.title')}</h2>
+          <ul className="list-disc space-y-2 pl-5 text-text-secondary">
+            <li>{t('prva_generacija.perk1_title')}</li>
+            <li>{t('prva_generacija.perk2_title')}</li>
+            <li>{t('prva_generacija.perk3_title')}</li>
+            <li>{t('prva_generacija.perk4_title')}</li>
+          </ul>
+        </section>
+
+        <section id="izberi-pot" className="mt-10 space-y-3">
+          <h2>{t('izberi_pot.title')}</h2>
+          <div className="rounded-xl border border-border bg-surface p-4 md:p-6">
+            <h3>{t('izberi_pot.community_title')}</h3>
+            <p className="text-text-secondary">{t('izberi_pot.community_text')}</p>
+            <h3 className="mt-4">{t('izberi_pot.lifestyle_title')}</h3>
+            <p className="text-text-secondary">{t('izberi_pot.lifestyle_text')}</p>
+          </div>
+        </section>
+
+        <section id="kaj-pridobis" className="mt-10 space-y-3">
+          <h2>{t('kaj_pridobis.title')}</h2>
+          <ul className="list-disc space-y-2 pl-5 text-text-secondary">
+            <li>{t('kaj_pridobis.skill1')}</li>
+            <li>{t('kaj_pridobis.skill2')}</li>
+            <li>{t('kaj_pridobis.skill3')}</li>
+            <li>{t('kaj_pridobis.skill4')}</li>
+            <li>{t('kaj_pridobis.skill5')}</li>
+          </ul>
+        </section>
+
+        <section id="koga-iscemo" className="mt-10 space-y-3">
+          <h2>{t('koga_iscemo.title')}</h2>
+          <p className="text-text-secondary">{t('koga_iscemo.subtitle')}</p>
+          <ul className="list-disc space-y-2 pl-5 text-text-secondary">
+            <li>{t('koga_iscemo.trait1')}</li>
+            <li>{t('koga_iscemo.trait2')}</li>
+            <li>{t('koga_iscemo.trait3')}</li>
+            <li>{t('koga_iscemo.trait4')}</li>
+          </ul>
+        </section>
+
         <section id="prijava" className="mt-10 space-y-3">
           <h2>{t('prijava.title')}</h2>
           <p className="text-text-secondary">{t('prijava.micro_text')}</p>
