@@ -1,24 +1,24 @@
-import { useTranslation } from '../utils/useTranslation'
+﻿import { useTranslation } from '../utils/useTranslation'
 
 export default function WhySection() {
   const { t } = useTranslation()
 
   return (
-    <section id="zakaj" className="scroll-mt-24 py-16 sm:py-20">
-      <div className="mx-auto max-w-4xl">
-        <p className="section-label">{t('zakaj.label')}</p>
-        <h2 className="section-title mt-3">{t('zakaj.title')}</h2>
+    <section id="zakaj" className="editorial-section section-white">
+      <div className="site-container section-narrow">
+        <p className="section-label section-label-mint" data-reveal>
+          {t('sections.zakaj_label')}
+        </p>
+        <h2 className="section-title" data-reveal data-reveal-delay="80">
+          {t('zakaj.title')}
+        </h2>
 
-        <div className="mt-8 grid gap-4 sm:gap-5">
-          <article className="section-card">
-            <p>{t('zakaj.text1')}</p>
-          </article>
-          <article className="section-card">
-            <p>{t('zakaj.text2')}</p>
-          </article>
-          <article className="section-card">
-            <p>{t('zakaj.text3')}</p>
-          </article>
+        <div className="flowing-copy" data-reveal data-reveal-delay="140">
+          <p>{t('zakaj.text1')}</p>
+          <span className="flow-divider" aria-hidden="true" />
+          <p>{t('zakaj.text2')}</p>
+          <span className="flow-divider" aria-hidden="true" />
+          <p>{t('zakaj.text3')}</p>
         </div>
       </div>
     </section>

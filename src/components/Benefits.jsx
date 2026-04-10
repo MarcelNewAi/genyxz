@@ -1,19 +1,5 @@
-import { useMemo } from 'react'
+﻿import { useMemo } from 'react'
 import { useTranslation } from '../utils/useTranslation'
-
-function CheckItem({ text }) {
-  return (
-    <li className="flex items-start gap-3 rounded-2xl border border-border bg-surface p-4">
-      <span
-        aria-hidden="true"
-        className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary text-xs font-bold text-text-primary"
-      >
-        ✓
-      </span>
-      <span className="text-text-primary">{text}</span>
-    </li>
-  )
-}
 
 export default function Benefits() {
   const { t } = useTranslation()
@@ -29,32 +15,45 @@ export default function Benefits() {
     [t],
   )
 
-  const benefits = useMemo(
+  const extras = useMemo(
     () => [t('kaj_pridobis.benefit1'), t('kaj_pridobis.benefit2'), t('kaj_pridobis.benefit3')],
     [t],
   )
 
   return (
-    <section id="kaj-pridobis" className="scroll-mt-24 py-16 sm:py-20">
-      <div className="mx-auto max-w-5xl">
-        <p className="section-label">{t('kaj_pridobis.label')}</p>
-        <h2 className="section-title mt-3">{t('kaj_pridobis.title')}</h2>
-        <p className="mt-3 text-text-secondary">{t('kaj_pridobis.subtitle')}</p>
+    <section id="kaj-pridobis" className="editorial-section section-white">
+      <div className="site-container">
+        <p className="section-label section-label-mint" data-reveal>
+          {t('sections.kaj_label')}
+        </p>
+        <h2 className="section-title" data-reveal data-reveal-delay="80">
+          {t('kaj_pridobis.title')}
+        </h2>
+        <p className="section-subtitle" data-reveal data-reveal-delay="130">
+          {t('kaj_pridobis.subtitle')}
+        </p>
 
-        <div className="mt-8 grid gap-6 lg:grid-cols-2">
-          <div>
-            <h3 className="mb-3 text-lg">{t('kaj_pridobis.skills_label')}</h3>
-            <ul className="grid gap-3">
-              {skills.map((skill) => (
-                <CheckItem key={skill} text={skill} />
+        <div className="benefits-grid">
+          <div data-reveal data-reveal-delay="170">
+            <h3 className="column-heading">{t('kaj_pridobis.skills_label')}</h3>
+            <ul className="clean-list">
+              {skills.map((item, index) => (
+                <li key={item} data-reveal data-reveal-delay={`${220 + index * 100}`}>
+                  <span aria-hidden="true">—</span>
+                  {item}
+                </li>
               ))}
             </ul>
           </div>
-          <div>
-            <h3 className="mb-3 text-lg">{t('kaj_pridobis.benefits_label')}</h3>
-            <ul className="grid gap-3">
-              {benefits.map((benefit) => (
-                <CheckItem key={benefit} text={benefit} />
+
+          <div data-reveal data-reveal-delay="170">
+            <h3 className="column-heading">{t('kaj_pridobis.benefits_label')}</h3>
+            <ul className="clean-list">
+              {extras.map((item, index) => (
+                <li key={item} data-reveal data-reveal-delay={`${220 + index * 100}`}>
+                  <span aria-hidden="true">—</span>
+                  {item}
+                </li>
               ))}
             </ul>
           </div>

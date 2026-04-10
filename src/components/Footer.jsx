@@ -1,4 +1,4 @@
-import { useTranslation } from '../utils/useTranslation'
+﻿import { useTranslation } from '../utils/useTranslation'
 
 function LogoWordmark() {
   const { t } = useTranslation()
@@ -9,8 +9,8 @@ function LogoWordmark() {
   const z = title.slice(5, 6)
 
   return (
-    <span aria-label={title} className="font-heading text-lg font-extrabold tracking-tight">
-      <span className="text-text-primary">{gen}</span>
+    <span aria-label={title} className="font-heading text-xl font-extrabold tracking-[-0.02em]">
+      <span className="text-[#F0F4F8]">{gen}</span>
       <span className="text-[#C218D8]">{y}</span>
       <span className="text-[#3B82F6]">{x}</span>
       <span className="text-[#14B8A6]">{z}</span>
@@ -22,19 +22,16 @@ export default function Footer() {
   const { t } = useTranslation()
 
   return (
-    <footer className="border-t border-border bg-surface">
-      <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-4 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+    <footer className="site-footer">
+      <div className="site-container footer-row" data-reveal>
         <LogoWordmark />
-        <p className="text-sm text-text-secondary">{t('footer.copyright', { year: new Date().getFullYear() })}</p>
-        <div className="flex items-center gap-4">
-          <a className="text-sm" href="#privacy">
-            {t('footer.privacy')}
-          </a>
-          <a className="text-sm" href="#terms">
-            {t('footer.terms')}
-          </a>
+        <p className="footer-copy">{t('footer.copyright', { year: new Date().getFullYear() })}</p>
+        <div className="footer-links">
+          <a href="#privacy">{t('footer.privacy')}</a>
+          <a href="#terms">{t('footer.terms')}</a>
         </div>
       </div>
+      <p className="footer-draft">{t('footer.draft_note')}</p>
     </footer>
   )
 }

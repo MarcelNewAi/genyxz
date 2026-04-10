@@ -1,52 +1,52 @@
-# Ä‘ĹşÂ§Â­ MASTER PLAN
+# Ă„â€ÄąĹźĂ‚Â§Ă‚Â­ MASTER PLAN
 
 > This is the single source of truth for this project build. Every step, every tool, every decision is documented here. Feed this to your coding model phase by phase.
 
 ---
 
-## Ä‘Ĺşâ€ťâ€™ Important Info Ă˘â‚¬â€ť Read First
+## Ă„â€ÄąĹźĂ˘â‚¬ĹĄĂ˘â‚¬â„˘ Important Info Ä‚ËĂ˘â€šÂ¬Ă˘â‚¬ĹĄ Read First
 
 ### Hosting & Infrastructure
 
 | What | Where |
 |---|---|
-| **Code Repository** | GitHub Ă˘â‚¬â€ť `https://github.com/genyxz/genyxz` |
-| **Frontend Hosting** | Netlify Ă˘â‚¬â€ť connected via Netlify CLI |
-| **Backend** | Netlify Functions (serverless) Ă˘â‚¬â€ť no separate backend server |
-| **Domain** | `genyxz.si` Ă˘â‚¬â€ť managed via Netlify DNS / external registrar |
+| **Code Repository** | GitHub Ä‚ËĂ˘â€šÂ¬Ă˘â‚¬ĹĄ `https://github.com/genyxz/genyxz` |
+| **Frontend Hosting** | Netlify Ä‚ËĂ˘â€šÂ¬Ă˘â‚¬ĹĄ connected via Netlify CLI |
+| **Backend** | Netlify Functions (serverless) Ä‚ËĂ˘â€šÂ¬Ă˘â‚¬ĹĄ no separate backend server |
+| **Domain** | `genyxz.si` Ä‚ËĂ˘â€šÂ¬Ă˘â‚¬ĹĄ managed via Netlify DNS / external registrar |
 
 ### Coding & AI Tools
 
 | Tool | Purpose |
 |---|---|
-| **Coding Model** | Codex CLI (chatgpt.com coding model) Ă˘â‚¬â€ť primary build tool |
-| **MCP Servers** | Context7 Ă˘â‚¬â€ť for up-to-date library documentation |
-| **Editor** | VS Code Ă˘â‚¬â€ť connected to Codex |
-| **CLI Tools** | Netlify CLI (installed globally) Ă˘â‚¬â€ť local dev, deploy, functions |
+| **Coding Model** | Codex CLI (chatgpt.com coding model) Ä‚ËĂ˘â€šÂ¬Ă˘â‚¬ĹĄ primary build tool |
+| **MCP Servers** | Context7 Ä‚ËĂ˘â€šÂ¬Ă˘â‚¬ĹĄ for up-to-date library documentation |
+| **Editor** | VS Code Ä‚ËĂ˘â€šÂ¬Ă˘â‚¬ĹĄ connected to Codex |
+| **CLI Tools** | Netlify CLI (installed globally) Ä‚ËĂ˘â€šÂ¬Ă˘â‚¬ĹĄ local dev, deploy, functions |
 
 ### Build Stack
 
 | Layer | Technology |
 |---|---|
 | **Build Tool** | Vite (latest) |
-| **Styling** | Tailwind CSS (latest) Ă˘â‚¬â€ť configured via Context7 docs |
+| **Styling** | Tailwind CSS (latest) Ä‚ËĂ˘â€šÂ¬Ă˘â‚¬ĹĄ configured via Context7 docs |
 | **i18n** | i18next + browser language detection |
-| **Cookies** | Custom implementation Ă˘â‚¬â€ť GDPR compliant |
-| **Analytics** | Google Analytics 4 Ă˘â‚¬â€ť loaded only after cookie consent |
+| **Cookies** | Custom implementation Ä‚ËĂ˘â€šÂ¬Ă˘â‚¬ĹĄ GDPR compliant |
+| **Analytics** | Google Analytics 4 Ä‚ËĂ˘â€šÂ¬Ă˘â‚¬ĹĄ loaded only after cookie consent |
 
-### Images Ă˘â‚¬â€ť Google Cloud Storage
+### Images Ä‚ËĂ˘â€šÂ¬Ă˘â‚¬ĹĄ Google Cloud Storage
 
-All images are hosted on Google Cloud Storage. Use the URLs listed in [`docs/INFO.md`](./docs/INFO.md) directly. **Never generate, find, or substitute image URLs** Ă˘â‚¬â€ť they are always provided by the project owner.
+All images are hosted on Google Cloud Storage. Use the URLs listed in [`docs/INFO.md`](./docs/INFO.md) directly. **Never generate, find, or substitute image URLs** Ä‚ËĂ˘â€šÂ¬Ă˘â‚¬ĹĄ they are always provided by the project owner.
 
 ### Key Rules for Codex
 
-1. **Always use Context7 MCP server** before writing config or implementation for any library. Docs change between versions Ă˘â‚¬â€ť never assume.
+1. **Always use Context7 MCP server** before writing config or implementation for any library. Docs change between versions Ä‚ËĂ˘â€šÂ¬Ă˘â‚¬ĹĄ never assume.
 2. **Read the referenced `.md` file** for each step before executing.
 3. **Follow the file structure** defined in Step 1 exactly.
-4. **Verify after every step** Ă˘â‚¬â€ť each step has a checkpoint at the bottom.
+4. **Verify after every step** Ä‚ËĂ˘â€šÂ¬Ă˘â‚¬ĹĄ each step has a checkpoint at the bottom.
 5. **Use `netlify dev`** for local development once `netlify.toml` is configured (not `npm run dev`).
-6. **Never hardcode text** Ă˘â‚¬â€ť all visible strings go through i18n translation keys.
-7. **All images come from Google Cloud Storage** Ă˘â‚¬â€ť use URLs from INFO.md, never generate your own.
+6. **Never hardcode text** Ä‚ËĂ˘â€šÂ¬Ă˘â‚¬ĹĄ all visible strings go through i18n translation keys.
+7. **All images come from Google Cloud Storage** Ä‚ËĂ˘â€šÂ¬Ă˘â‚¬ĹĄ use URLs from INFO.md, never generate your own.
 8. **Commit after each step:**
    ```bash
    git add -A && git commit -m "Step X: [description]"
@@ -54,10 +54,10 @@ All images are hosted on Google Cloud Storage. Use the URLs listed in [`docs/INF
 
 ---
 
-## Ä‘Ĺşâ€śâ€ą Build Steps
+## Ă„â€ÄąĹźĂ˘â‚¬Ĺ›Ă˘â‚¬Ä… Build Steps
 
-### Step 0 Ă˘â‚¬â€ť Project Identity & Planning
-Ä‘Ĺşâ€śâ€ž **Reference:** [`docs/INFO.md`](./docs/INFO.md)
+### Step 0 Ä‚ËĂ˘â€šÂ¬Ă˘â‚¬ĹĄ Project Identity & Planning
+Ă„â€ÄąĹźĂ˘â‚¬Ĺ›Ă˘â‚¬Ĺľ **Reference:** [`docs/INFO.md`](./docs/INFO.md)
 
 Define everything about what we're building before writing any code.
 
@@ -77,8 +77,8 @@ Define everything about what we're building before writing any code.
 
 ---
 
-### Step 1 Ă˘â‚¬â€ť Foundation
-Ä‘Ĺşâ€śâ€ž **Reference:** [`docs/01-foundation.md`](./docs/01-foundation.md)
+### Step 1 Ä‚ËĂ˘â€šÂ¬Ă˘â‚¬ĹĄ Foundation
+Ă„â€ÄąĹźĂ˘â‚¬Ĺ›Ă˘â‚¬Ĺľ **Reference:** [`docs/01-foundation.md`](./docs/01-foundation.md)
 
 Scaffold the project, configure all tooling, build the HTML structure.
 
@@ -105,13 +105,13 @@ Scaffold the project, configure all tooling, build the HTML structure.
   - [ ] Language redirect script in `<body>`
   - [ ] `robots.txt` created (set to `noindex,follow` during development)
 - [x] **1.6** Project folder structure created
-- [x] **1.7** All page files/routes created (empty Ă˘â‚¬â€ť content comes in Step 3)
+- [x] **1.7** All page files/routes created (empty Ä‚ËĂ˘â€šÂ¬Ă˘â‚¬ĹĄ content comes in Step 3)
 - [x] **1.8** `netlify dev` runs successfully
 
 ---
 
-### Step 2 Ă˘â‚¬â€ť Advanced Functionality
-Ä‘Ĺşâ€śâ€ž **Reference:** [`docs/02-advanced.md`](./docs/02-advanced.md)
+### Step 2 Ä‚ËĂ˘â€šÂ¬Ă˘â‚¬ĹĄ Advanced Functionality
+Ă„â€ÄąĹźĂ˘â‚¬Ĺ›Ă˘â‚¬Ĺľ **Reference:** [`docs/02-advanced.md`](./docs/02-advanced.md)
 
 Add i18n, routing, dark mode, and error handling.
 
@@ -126,21 +126,22 @@ Add i18n, routing, dark mode, and error handling.
 - [ ] Language selector in navigation bar (desktop + mobile)
 - [ ] Language selector in footer
 - [ ] Flag SVG icons used for each language
-- [x] **2.3** Dark mode: N/A â€” light theme only
+- [x] **2.3** Dark mode: N/A Ă˘â‚¬â€ť light theme only
 
 - [x] **2.4** 404 Not Found page built
   - [ ] Styled consistently with site design
   - [ ] Translated via i18n
   - [ ] Links back to homepage
-- [ ] **2.5** All text on site uses i18n translation keys Ă˘â‚¬â€ť no hardcoded strings
+- [ ] **2.5** All text on site uses i18n translation keys Ä‚ËĂ˘â€šÂ¬Ă˘â‚¬ĹĄ no hardcoded strings
 
 ---
 
-### Step 3 Ă˘â‚¬â€ť Content Implementation
-Ä‘Ĺşâ€śâ€ž **Reference:** [`docs/03-content.md`](./docs/03-content.md)
+### Step 3 Ä‚ËĂ˘â€šÂ¬Ă˘â‚¬ĹĄ Content Implementation
+Ă„â€ÄąĹźĂ˘â‚¬Ĺ›Ă˘â‚¬Ĺľ **Reference:** [`docs/03-content.md`](./docs/03-content.md)
 
 Fill all pages with actual content using the i18n system and respecting dark mode.
 
+> Design overhaul complete
 - [x] **3.1** All translation files populated with real content (single-language `sl` scope)
 - [x] **3.2** Each page built out with sections and components
   - [x] All content rendered via i18n translation keys
@@ -155,8 +156,8 @@ Fill all pages with actual content using the i18n system and respecting dark mod
 
 ---
 
-### Step 4 Ă˘â‚¬â€ť Netlify Functions
-Ä‘Ĺşâ€śâ€ž **Reference:** [`docs/NETLIFY_FUNCTIONS.md`](./docs/NETLIFY_FUNCTIONS.md)
+### Step 4 Ä‚ËĂ˘â€šÂ¬Ă˘â‚¬ĹĄ Netlify Functions
+Ă„â€ÄąĹźĂ˘â‚¬Ĺ›Ă˘â‚¬Ĺľ **Reference:** [`docs/NETLIFY_FUNCTIONS.md`](./docs/NETLIFY_FUNCTIONS.md)
 
 Build all serverless backend functionality.
 
@@ -166,8 +167,8 @@ Build all serverless backend functionality.
 
 ---
 
-### Step 4.1 Ă˘â‚¬â€ť Other Integrations
-Ä‘Ĺşâ€śâ€ž **Reference:** [`docs/OTHER_FUNCTIONS.md`](./docs/OTHER_FUNCTIONS.md)
+### Step 4.1 Ä‚ËĂ˘â€šÂ¬Ă˘â‚¬ĹĄ Other Integrations
+Ă„â€ÄąĹźĂ˘â‚¬Ĺ›Ă˘â‚¬Ĺľ **Reference:** [`docs/OTHER_FUNCTIONS.md`](./docs/OTHER_FUNCTIONS.md)
 
 
 - [ ] Any other client-specific integrations
@@ -175,8 +176,8 @@ Build all serverless backend functionality.
 
 ---
 
-### Step 5 Ă˘â‚¬â€ť Cookies & Analytics
-Ä‘Ĺşâ€śâ€ž **Reference:** [`docs/COOKIES.md`](./docs/COOKIES.md)
+### Step 5 Ä‚ËĂ˘â€šÂ¬Ă˘â‚¬ĹĄ Cookies & Analytics
+Ă„â€ÄąĹźĂ˘â‚¬Ĺ›Ă˘â‚¬Ĺľ **Reference:** [`docs/COOKIES.md`](./docs/COOKIES.md)
 
 - [ ] **5.1** Cookie consent data structure (version, categories, timestamp)
 - [ ] **5.2** Cookie utility functions (set, get, delete, consent, reset)
@@ -201,8 +202,8 @@ Build all serverless backend functionality.
 
 ---
 
-### Step 6 Ă˘â‚¬â€ť Legal Pages
-Ä‘Ĺşâ€śâ€ž **Reference:** [`docs/LEGAL.md`](./docs/LEGAL.md)
+### Step 6 Ä‚ËĂ˘â€šÂ¬Ă˘â‚¬ĹĄ Legal Pages
+Ă„â€ÄąĹźĂ˘â‚¬Ĺ›Ă˘â‚¬Ĺľ **Reference:** [`docs/LEGAL.md`](./docs/LEGAL.md)
 
 - [ ] **6.1** Privacy Policy page
   - [ ] Content covers: data collection, cookies, analytics, third-party services, user rights
@@ -214,8 +215,8 @@ Build all serverless backend functionality.
 
 ---
 
-### Step 7 Ă˘â‚¬â€ť Sitemap
-Ä‘Ĺşâ€śâ€ž **Reference:** [`docs/07-sitemap.md`](./docs/07-sitemap.md)
+### Step 7 Ä‚ËĂ˘â€šÂ¬Ă˘â‚¬ĹĄ Sitemap
+Ă„â€ÄąĹźĂ˘â‚¬Ĺ›Ă˘â‚¬Ĺľ **Reference:** [`docs/07-sitemap.md`](./docs/07-sitemap.md)
 
 - [ ] **7.1** Use Context7 MCP server to get up-to-date sitemap spec
 - [ ] **7.2** `sitemap.xml` generated with all pages and language variants
@@ -224,8 +225,8 @@ Build all serverless backend functionality.
 
 ---
 
-### Step 8 Ă˘â‚¬â€ť Performance & Accessibility
-Ä‘Ĺşâ€śâ€ž **Reference:** [`docs/A11Y_PERFORMANCE.md`](./docs/A11Y_PERFORMANCE.md)
+### Step 8 Ä‚ËĂ˘â€šÂ¬Ă˘â‚¬ĹĄ Performance & Accessibility
+Ă„â€ÄąĹźĂ˘â‚¬Ĺ›Ă˘â‚¬Ĺľ **Reference:** [`docs/A11Y_PERFORMANCE.md`](./docs/A11Y_PERFORMANCE.md)
 
 - [ ] **8.1** Image optimization (WebP/AVIF, lazy loading, explicit dimensions)
 - [ ] **8.2** Performance (fonts, critical CSS, code splitting, caching)
@@ -234,8 +235,8 @@ Build all serverless backend functionality.
 
 ---
 
-### Step 9 Ă˘â‚¬â€ť Launch
-Ä‘Ĺşâ€śâ€ž **Reference:** [`docs/LAUNCH_CHECKLIST.md`](./docs/LAUNCH_CHECKLIST.md)
+### Step 9 Ä‚ËĂ˘â€šÂ¬Ă˘â‚¬ĹĄ Launch
+Ă„â€ÄąĹźĂ˘â‚¬Ĺ›Ă˘â‚¬Ĺľ **Reference:** [`docs/LAUNCH_CHECKLIST.md`](./docs/LAUNCH_CHECKLIST.md)
 
 - [ ] **9.1** Lighthouse audit: all scores 90+
 - [ ] **9.2** Cross-browser + mobile tested
@@ -247,12 +248,12 @@ Build all serverless backend functionality.
 
 ---
 
-> Ă˘Ĺ›â€¦ **When all checkboxes above are checked, the project is complete and live.**
+> Ä‚ËÄąâ€şĂ˘â‚¬Â¦ **When all checkboxes above are checked, the project is complete and live.**
 
 ## Company Context
 
 ### What The Company Does
-GenYXZ je skupnost ambasadorjev, ki povezuje mlade z znanjem o sodobnih pristopih k zdravju. Projekt deluje v okolju preventive, sodobne medicine in dolgoroĂ„Ĺ¤ne zaÄąË‡Ă„Ĺ¤ite, povezan z blagovno znamko Dr Best / Trilogija zaÄąË‡Ă„Ĺ¤ite. Cilj je rekrutirati prvo generacijo GenYXZ ambasadorjev Ă˘â‚¬â€ť ÄąË‡tudente Gen Z, ki ÄąÄľelijo veĂ„Ĺ¤ kot samo ÄąË‡tudentsko delo.
+GenYXZ je skupnost ambasadorjev, ki povezuje mlade z znanjem o sodobnih pristopih k zdravju. Projekt deluje v okolju preventive, sodobne medicine in dolgoroÄ‚â€žÄąÂ¤ne zaĂ„Ä…Ă‹â€ˇÄ‚â€žÄąÂ¤ite, povezan z blagovno znamko Dr Best / Trilogija zaĂ„Ä…Ă‹â€ˇÄ‚â€žÄąÂ¤ite. Cilj je rekrutirati prvo generacijo GenYXZ ambasadorjev Ä‚ËĂ˘â€šÂ¬Ă˘â‚¬ĹĄ Ă„Ä…Ă‹â€ˇtudente Gen Z, ki Ă„Ä…Ă„Äľelijo veÄ‚â€žÄąÂ¤ kot samo Ă„Ä…Ă‹â€ˇtudentsko delo.
 
 ### Important Company Information
 Not provided

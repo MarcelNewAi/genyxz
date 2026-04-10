@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+﻿import { useMemo } from 'react'
 import { useTranslation } from '../utils/useTranslation'
 
 export default function LookingFor() {
@@ -15,25 +15,28 @@ export default function LookingFor() {
   )
 
   return (
-    <section id="koga-iscemo" className="scroll-mt-24 py-16 sm:py-20">
-      <div className="mx-auto max-w-4xl">
-        <p className="section-label">{t('koga_iscemo.label')}</p>
-        <h2 className="section-title mt-3">{t('koga_iscemo.title')}</h2>
-        <p className="mt-3 text-text-secondary">{t('koga_iscemo.subtitle')}</p>
+    <section id="koga-iscemo" className="editorial-section section-light">
+      <div className="site-container section-narrow">
+        <p className="section-label section-label-mint" data-reveal>
+          {t('sections.koga_label')}
+        </p>
+        <h2 className="section-title" data-reveal data-reveal-delay="80">
+          {t('koga_iscemo.title')}
+        </h2>
+        <p className="section-subtitle" data-reveal data-reveal-delay="130">
+          {t('koga_iscemo.subtitle')}
+        </p>
 
-        <ul className="mt-8 grid gap-3">
-          {traits.map((trait) => (
-            <li key={trait} className="flex items-start gap-3 rounded-2xl border border-border bg-surface p-4">
-              <span
-                aria-hidden="true"
-                className="mt-1.5 inline-flex h-3 w-3 shrink-0 rounded-full bg-secondary ring-4 ring-secondary/25"
-              />
-              <span className="text-text-primary">{trait}</span>
+        <ul className="trait-list" data-reveal data-reveal-delay="180">
+          {traits.map((trait, index) => (
+            <li key={trait} data-reveal data-reveal-delay={`${220 + index * 80}`}>
+              <span aria-hidden="true">•</span>
+              {trait}
             </li>
           ))}
         </ul>
 
-        <p className="mt-6 rounded-2xl border border-primary/40 bg-primary/10 p-4 text-sm font-semibold text-text-primary">
+        <p className="editorial-note" data-reveal data-reveal-delay="260">
           {t('koga_iscemo.note')}
         </p>
       </div>

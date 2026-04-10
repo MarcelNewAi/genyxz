@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { useTranslation } from '../utils/useTranslation'
 
 export default function ApplicationForm() {
@@ -6,27 +6,33 @@ export default function ApplicationForm() {
   const [path, setPath] = useState('community')
 
   return (
-    <section id="prijava" className="scroll-mt-24 py-16 sm:py-20">
-      <div className="mx-auto max-w-4xl rounded-3xl border border-border bg-surface p-6 sm:p-8">
-        <p className="section-label">{t('prijava.label')}</p>
-        <h2 className="section-title mt-3">{t('prijava.title')}</h2>
-        <p className="mt-3 text-text-secondary">{t('prijava.micro_text')}</p>
+    <section id="prijava" className="editorial-section section-application">
+      <div className="site-container section-narrow">
+        <p className="section-label section-label-mint" data-reveal>
+          {t('sections.prijava_label')}
+        </p>
+        <h2 className="section-title" data-reveal data-reveal-delay="80">
+          {t('prijava.title')}
+        </h2>
+        <p className="section-subtitle" data-reveal data-reveal-delay="130">
+          {t('prijava.micro_text')}
+        </p>
 
-        <form className="mt-8 grid gap-4" onSubmit={(event) => event.preventDefault()}>
-          <label className="form-field">
-            <span className="field-label">{t('prijava.field1_label')}</span>
-            <textarea className="min-h-32" placeholder={t('prijava.field1_placeholder')} />
+        <form className="application-form" onSubmit={(event) => event.preventDefault()} data-reveal data-reveal-delay="180">
+          <label className="application-field">
+            <span>{t('prijava.field1_label')}</span>
+            <textarea className="field-underline min-h-30" placeholder={t('prijava.field1_placeholder')} />
           </label>
 
-          <label className="form-field">
-            <span className="field-label">{t('prijava.field2_label')}</span>
-            <textarea className="min-h-28" placeholder={t('prijava.field2_placeholder')} />
+          <label className="application-field">
+            <span>{t('prijava.field2_label')}</span>
+            <textarea className="field-underline min-h-28" placeholder={t('prijava.field2_placeholder')} />
           </label>
 
-          <fieldset className="rounded-2xl border border-border p-4">
-            <legend className="px-1 text-sm font-semibold text-text-primary">{t('prijava.field3_label')}</legend>
-            <div className="mt-2 grid gap-2 sm:grid-cols-2">
-              <label className="inline-flex min-h-11 cursor-pointer items-center gap-3 rounded-xl border border-border bg-background px-3">
+          <fieldset className="path-selector">
+            <legend>{t('prijava.field3_label')}</legend>
+            <div className="path-selector-grid">
+              <label className={`path-option ${path === 'community' ? 'path-option-active' : ''}`}>
                 <input
                   checked={path === 'community'}
                   name="path"
@@ -36,7 +42,8 @@ export default function ApplicationForm() {
                 />
                 <span>{t('prijava.field3_option1')}</span>
               </label>
-              <label className="inline-flex min-h-11 cursor-pointer items-center gap-3 rounded-xl border border-border bg-background px-3">
+
+              <label className={`path-option ${path === 'lifestyle' ? 'path-option-active' : ''}`}>
                 <input
                   checked={path === 'lifestyle'}
                   name="path"
@@ -49,21 +56,19 @@ export default function ApplicationForm() {
             </div>
           </fieldset>
 
-          <label className="form-field">
-            <span className="field-label">{t('prijava.field4_label')}</span>
-            <input placeholder={t('prijava.field4_placeholder')} type="text" />
+          <label className="application-field">
+            <span>{t('prijava.field4_label')}</span>
+            <input className="field-underline" placeholder={t('prijava.field4_placeholder')} type="text" />
           </label>
 
-          <div className="pt-2">
-            <button className="btn btn-cta min-h-12 rounded-full px-7 text-base" type="submit">
-              {t('prijava.cta')}
-            </button>
-          </div>
+          <button className="submit-cta" type="submit">
+            {t('prijava.cta')}
+          </button>
         </form>
 
-        <p className="mt-6 text-sm text-text-secondary">
-          <span className="block">{t('prijava.closing_line1')}</span>
-          <span className="block font-medium text-text-primary">{t('prijava.closing_line2')}</span>
+        <p className="application-closing" data-reveal data-reveal-delay="240">
+          <span>{t('prijava.closing_line1')}</span>
+          <span>{t('prijava.closing_line2')}</span>
         </p>
       </div>
     </section>
