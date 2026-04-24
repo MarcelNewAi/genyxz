@@ -11,7 +11,7 @@ function LogoWordmark() {
   const { t } = useTranslation()
   const title = t('site.title')
 
-  return <img alt={title} className="brand-logo brand-logo-footer" src="/Logo%20-%20GenYXZ.svg" />
+  return <img alt={title} className="brand-logo brand-logo-footer" src="/locales/sl/Logo.svg" />
 }
 
 export default function Footer() {
