@@ -28,7 +28,7 @@ export default function Navbar() {
         </a>
 
         <a className="btn-premium btn-nav" href="#prijava">
-          <span>{t('site.sticky_cta')}</span>
+          <span>{t('hero.cta')}</span>
           <IconArrowUpRight />
         </a>
       </div>

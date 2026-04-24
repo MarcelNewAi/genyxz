@@ -53,6 +53,44 @@ export function IconSpark() {
   )
 }
 
+export function IconCheck() {
+  return (
+    <svg aria-hidden="true" className="icon" viewBox="0 0 24 24" fill="none">
+      <path d="m5 12 4.1 4.1L19 6.4" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
+export function IconClock() {
+  return (
+    <svg aria-hidden="true" className="icon" viewBox="0 0 24 24" fill="none">
+      <circle cx="12" cy="12" r="8.5" stroke="currentColor" strokeWidth="1.6" />
+      <path d="M12 7.8v4.6l3 1.8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
+export function IconMentor() {
+  return (
+    <svg aria-hidden="true" className="icon" viewBox="0 0 24 24" fill="none">
+      <path d="M7 6.5 12 4l5 2.5v4.7c0 3.2-1.9 5.2-5 6.8-3.1-1.6-5-3.6-5-6.8V6.5Z" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M9.6 11.4 11 12.8l3.4-3.6" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M5 20c1.3-1.7 3.3-2.5 6-2.5s4.7.8 6 2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  )
+}
+
+export function IconHeartUsers() {
+  return (
+    <svg aria-hidden="true" className="icon" viewBox="0 0 24 24" fill="none">
+      <circle cx="8" cy="9" r="2.5" stroke="currentColor" strokeWidth="1.5" />
+      <circle cx="16" cy="9.5" r="2" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M4.8 18c.9-2.2 2.9-3.4 5.7-3.4 1.4 0 2.6.3 3.6.8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M14.8 18.2c.8-.9 1.8-1.7 3-2.5 1.9-1.2 2.5-3.5 1.1-4.7-1-.8-2.2-.5-2.9.4-.7-.9-1.9-1.2-2.9-.4-1.4 1.2-.8 3.5 1.1 4.7.2.1.4.3.6.4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
 export function IconSocial() {
   return (
     <svg aria-hidden="true" className="icon" viewBox="0 0 24 24" fill="none">

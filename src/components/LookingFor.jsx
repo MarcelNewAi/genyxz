@@ -6,12 +6,7 @@ export default function LookingFor() {
   const { t } = useTranslation()
 
   const traits = useMemo(
-    () => [
-      t('koga_iscemo.trait1'),
-      t('koga_iscemo.trait2'),
-      t('koga_iscemo.trait3'),
-      t('koga_iscemo.trait4'),
-    ],
+    () => [t('koga_iscemo.trait1'), t('koga_iscemo.trait2'), t('koga_iscemo.trait3')],
     [t],
   )
 
@@ -21,12 +16,12 @@ export default function LookingFor() {
         <p className="section-label section-label-light" data-reveal data-reveal-style="clip">
           {t('labels.koga_iscemo')}
         </p>
+        <p className="looking-opening" data-reveal data-reveal-style="up" data-reveal-delay="60">
+          {t('koga_iscemo.opening')}
+        </p>
         <h2 className="section-title" data-reveal data-reveal-style="up" data-reveal-delay="80">
           {t('koga_iscemo.title')}
         </h2>
-        <p className="section-subtitle" data-reveal data-reveal-style="up" data-reveal-delay="140">
-          {t('koga_iscemo.subtitle')}
-        </p>
 
         <ul className="traits-list" data-reveal data-reveal-style="up" data-reveal-delay="200">
           {traits.map((trait, index) => (
@@ -38,10 +33,6 @@ export default function LookingFor() {
             </li>
           ))}
         </ul>
-
-        <p className="note-callout" data-reveal data-reveal-style="up" data-reveal-delay="360">
-          {t('koga_iscemo.note')}
-        </p>
       </div>
     </section>
   )

@@ -2,7 +2,7 @@
 import { IconArrowUpRight } from './Icons'
 import { useTranslation } from '../utils/useTranslation'
 
-function FloatingField({ helper, id, isTextarea = false, label, onChange, rows = 3, value }) {
+function FloatingField({ helper, id, isTextarea = false, label, onChange, rows = 3, type = 'text', value }) {
   const Control = isTextarea ? 'textarea' : 'input'
 
   return (
@@ -12,12 +12,12 @@ function FloatingField({ helper, id, isTextarea = false, label, onChange, rows =
         onChange={onChange}
         placeholder=" "
         rows={isTextarea ? rows : undefined}
-        type={isTextarea ? undefined : 'text'}
+        type={isTextarea ? undefined : type}
         value={value}
       />
       <span>{label}</span>
       <em className="field-border" aria-hidden="true" />
-      <small>{helper}</small>
+      {helper ? <small>{helper}</small> : null}
     </label>
   )
 }
@@ -27,7 +27,8 @@ export default function ApplicationForm() {
   const [path, setPath] = useState('community')
   const [reason, setReason] = useState('')
   const [motivation, setMotivation] = useState('')
-  const [contact, setContact] = useState('')
+  const [email, setEmail] = useState('')
+  const [phone, setPhone] = useState('')
 
   return (
     <section id="prijava" className="editorial-section section-application">
@@ -39,25 +40,25 @@ export default function ApplicationForm() {
           {t('prijava.title')}
         </h2>
         <p className="section-subtitle" data-reveal data-reveal-style="up" data-reveal-delay="140">
-          {t('prijava.micro_text')}
+          {t('prijava.subtitle')}
         </p>
 
         <form className="application-form" onSubmit={(event) => event.preventDefault()} data-reveal data-reveal-style="up" data-reveal-delay="200">
           <FloatingField
-            helper={t('prijava.field1_placeholder')}
             id="field-reason"
             isTextarea
             label={t('prijava.field1_label')}
             onChange={(event) => setReason(event.target.value)}
+            rows={5}
             value={reason}
           />
 
           <FloatingField
-            helper={t('prijava.field2_placeholder')}
             id="field-motivation"
             isTextarea
             label={t('prijava.field2_label')}
             onChange={(event) => setMotivation(event.target.value)}
+            rows={5}
             value={motivation}
           />
 
@@ -89,11 +90,21 @@ export default function ApplicationForm() {
           </fieldset>
 
           <FloatingField
-            helper={t('prijava.field4_placeholder')}
-            id="field-contact"
+            helper={t('prijava.field4_helper')}
+            id="field-email"
             label={t('prijava.field4_label')}
-            onChange={(event) => setContact(event.target.value)}
-            value={contact}
+            onChange={(event) => setEmail(event.target.value)}
+            type="email"
+            value={email}
+          />
+
+          <FloatingField
+            helper={t('prijava.field5_helper')}
+            id="field-phone"
+            label={t('prijava.field5_label')}
+            onChange={(event) => setPhone(event.target.value)}
+            type="tel"
+            value={phone}
           />
 
           <button className="btn-premium btn-submit" type="submit">
@@ -102,10 +113,6 @@ export default function ApplicationForm() {
           </button>
         </form>
 
-        <p className="application-closing" data-reveal data-reveal-style="up" data-reveal-delay="260">
-          <span>{t('prijava.closing_line1')}</span>
-          <span className="application-closing-strong">{t('prijava.closing_line2')}</span>
-        </p>
       </div>
     </section>
   )

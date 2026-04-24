@@ -1,27 +1,8 @@
-﻿import { useMemo } from 'react'
-import { IconArrow } from './Icons'
+﻿import { IconArrow } from './Icons'
 import { useTranslation } from '../utils/useTranslation'
 
 export default function Hero() {
   const { t } = useTranslation()
-
-  const secondLine = useMemo(() => {
-    const line = t('hero.title_line2')
-    const emphasisWord = t('hero.title_line2_emphasis')
-
-    if (!line.includes(emphasisWord)) {
-      return <span>{line}</span>
-    }
-
-    const [before, after] = line.split(emphasisWord)
-    return (
-      <>
-        {before}
-        <span className="hero-gradient-word">{emphasisWord}</span>
-        {after}
-      </>
-    )
-  }, [t])
 
   return (
     <section id="hero" className="hero-section editorial-section section-light">
@@ -37,7 +18,7 @@ export default function Hero() {
 
           <h1 className="hero-title" data-reveal data-reveal-style="up" data-reveal-delay="80">
             <span className="block">{t('hero.title_line1')}</span>
-            <span className="block">{secondLine}</span>
+            <span className="block">{t('hero.title_line2')}</span>
           </h1>
 
           <p className="hero-text" data-reveal data-reveal-style="up" data-reveal-delay="180">

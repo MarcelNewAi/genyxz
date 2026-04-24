@@ -1,5 +1,5 @@
 ﻿import { useMemo } from 'react'
-import { IconShield, IconSpark } from './Icons'
+import { IconArrow, IconCheck } from './Icons'
 import { useTranslation } from '../utils/useTranslation'
 
 function BenefitItem({ text, delay, icon }) {
@@ -17,18 +17,7 @@ export default function Benefits() {
   const { t } = useTranslation()
 
   const skills = useMemo(
-    () => [
-      t('kaj_pridobis.skill1'),
-      t('kaj_pridobis.skill2'),
-      t('kaj_pridobis.skill3'),
-      t('kaj_pridobis.skill4'),
-      t('kaj_pridobis.skill5'),
-    ],
-    [t],
-  )
-
-  const extras = useMemo(
-    () => [t('kaj_pridobis.benefit1'), t('kaj_pridobis.benefit2'), t('kaj_pridobis.benefit3')],
+    () => [t('kaj_pridobis.skill1'), t('kaj_pridobis.skill2'), t('kaj_pridobis.skill3'), t('kaj_pridobis.skill4'), t('kaj_pridobis.skill5')],
     [t],
   )
 
@@ -41,28 +30,23 @@ export default function Benefits() {
         <h2 className="section-title" data-reveal data-reveal-style="up" data-reveal-delay="80">
           {t('kaj_pridobis.title')}
         </h2>
-        <p className="section-subtitle" data-reveal data-reveal-style="up" data-reveal-delay="140">
-          {t('kaj_pridobis.subtitle')}
-        </p>
 
-        <div className="benefits-columns" data-reveal data-reveal-style="up" data-reveal-delay="200">
-          <article className="benefits-card">
+        <div className="benefits-columns benefits-columns-single" data-reveal data-reveal-style="up" data-reveal-delay="200">
+          <article className="benefits-card benefits-card-accent">
             <h3 className="benefits-heading">{t('kaj_pridobis.skills_heading')}</h3>
             <ul className="benefits-list">
               {skills.map((item, index) => (
-                <BenefitItem key={item} delay={`${240 + index * 80}`} icon={<IconSpark />} text={item} />
+                <BenefitItem key={item} delay={`${240 + index * 80}`} icon={<IconCheck />} text={item} />
               ))}
             </ul>
           </article>
+        </div>
 
-          <article className="benefits-card benefits-card-accent">
-            <h3 className="benefits-heading">{t('kaj_pridobis.benefits_heading')}</h3>
-            <ul className="benefits-list">
-              {extras.map((item, index) => (
-                <BenefitItem key={item} delay={`${260 + index * 90}`} icon={<IconShield />} text={item} />
-              ))}
-            </ul>
-          </article>
+        <div className="section-cta" data-reveal data-reveal-style="up" data-reveal-delay="520">
+          <a className="btn-premium" href="#prijava">
+            <span>{t('hero.cta')}</span>
+            <IconArrow />
+          </a>
         </div>
       </div>
     </section>

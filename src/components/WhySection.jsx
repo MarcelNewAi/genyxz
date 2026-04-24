@@ -2,6 +2,7 @@
 
 export default function WhySection() {
   const { t } = useTranslation()
+  const blocks = [t('zakaj.block1'), t('zakaj.block2'), t('zakaj.block3')]
 
   return (
     <section id="zakaj" className="editorial-section section-surface section-rhythm-compact">
@@ -13,19 +14,17 @@ export default function WhySection() {
           {t('zakaj.title')}
         </h2>
 
-        <div className="why-flow" data-reveal data-reveal-style="up" data-reveal-delay="140">
-          <p className="why-line" data-reveal data-reveal-style="left" data-reveal-delay="200">
-            {t('zakaj.text1')}
-          </p>
-          <span className="why-divider" aria-hidden="true" />
-          <p className="why-line" data-reveal data-reveal-style="right" data-reveal-delay="280">
-            {t('zakaj.text2')}
-          </p>
-          <span className="why-divider" aria-hidden="true" />
-          <p className="why-line" data-reveal data-reveal-style="left" data-reveal-delay="360">
-            {t('zakaj.text3')}
-          </p>
+        <div className="why-grid" data-reveal data-reveal-style="up" data-reveal-delay="140">
+          {blocks.map((block, index) => (
+            <article key={block} className="why-card" data-reveal data-reveal-style={index % 2 === 0 ? 'left' : 'right'} data-reveal-delay={`${200 + index * 90}`}>
+              <p className="why-line">{block}</p>
+            </article>
+          ))}
         </div>
+
+        <p className="why-closing" data-reveal data-reveal-style="up" data-reveal-delay="420">
+          {t('zakaj.closing')}
+        </p>
       </div>
     </section>
   )

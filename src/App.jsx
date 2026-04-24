@@ -2,8 +2,10 @@
 import ApplicationForm from './components/ApplicationForm'
 import Benefits from './components/Benefits'
 import ChoosePath from './components/ChoosePath'
+import FinalCta from './components/FinalCta'
 import FirstGeneration from './components/FirstGeneration'
 import Footer from './components/Footer'
+import FrictionBar from './components/FrictionBar'
 import Hero from './components/Hero'
 import LookingFor from './components/LookingFor'
 import MarqueeStrip from './components/MarqueeStrip'
@@ -51,6 +53,7 @@ function App() {
       <ScrollProgress />
       <Navbar />
       <Hero />
+      <FrictionBar />
       <MarqueeStrip />
       <WhySection />
       <FirstGeneration />
@@ -58,6 +61,7 @@ function App() {
       <Benefits />
       <LookingFor />
       <ApplicationForm />
+      <FinalCta />
       <Footer />
       <StickyBar show={showStickyBar && !isInApplication} />
     </div>
