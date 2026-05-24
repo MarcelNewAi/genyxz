@@ -11,7 +11,7 @@ function LogoWordmark() {
   const { t } = useTranslation()
   const title = t('site.title')
 
-  return <img alt={title} className="brand-logo brand-logo-footer" src="/locales/sl/Logo.svg" />
+  return <img alt={title} className="brand-logo brand-logo-footer" src="/locales/sl/dna-logo-bg.svg" />
 }
 
 export default function Footer() {
@@ -25,19 +25,19 @@ export default function Footer() {
           <div className="footer-column footer-brand">
             <LogoWordmark />
             <p className="footer-copy">{t('footer.copyright', { year: new Date().getFullYear() })}</p>
-            <p className="footer-credit">{t('footer.credit')}</p>
+            <p className="footer-credit">Povezujemo znanje, ljudi in sodobne rešitve.</p>
           </div>
 
           <div className="footer-column">
             <p className="footer-heading">{t('footer.links_heading')}</p>
             <div className="footer-links">
-              <a href="#privacy">
+              <a href="/o-nas">
                 <IconPrivacy />
-                <span>{t('footer.privacy')}</span>
+                <span>O nas</span>
               </a>
-              <a href="#terms">
+              <a href="/kaj-delamo">
                 <IconTerms />
-                <span>{t('footer.terms')}</span>
+                <span>Kaj delamo</span>
               </a>
             </div>
           </div>

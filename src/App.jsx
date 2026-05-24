@@ -13,15 +13,22 @@ import Navbar from './components/Navbar'
 import ScrollProgress from './components/ScrollProgress'
 import StickyBar from './components/StickyBar'
 import WhySection from './components/WhySection'
+import MainSite from './pages/MainSite'
 import { useScrollReveal } from './utils/useScrollReveal'
 
 function App() {
+  const isAmbassadorLanding =
+    typeof window !== 'undefined' && window.location.pathname === '/postani-ambasador'
   const [showStickyBar, setShowStickyBar] = useState(false)
   const [isInApplication, setIsInApplication] = useState(false)
 
   useScrollReveal()
 
   useEffect(() => {
+    if (!isAmbassadorLanding) {
+      return undefined
+    }
+
     const heroElement = document.getElementById('hero')
     const applicationElement = document.getElementById('prijava')
 
@@ -46,12 +53,16 @@ function App() {
       heroObserver.disconnect()
       applicationObserver.disconnect()
     }
-  }, [])
+  }, [isAmbassadorLanding])
+
+  if (!isAmbassadorLanding) {
+    return <MainSite />
+  }
 
   return (
     <div className="site-shell">
       <ScrollProgress />
-      <Navbar />
+      <Navbar variant="landing" />
       <Hero />
       <FrictionBar />
       <MarqueeStrip />

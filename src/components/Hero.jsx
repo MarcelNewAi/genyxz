@@ -1,4 +1,5 @@
 ﻿import { useMemo } from 'react'
+import helixMotifSrc from '../assets/images/genyxz-first-helix-photo-preserved.svg'
 import { IconArrow } from './Icons'
 import { useTranslation } from '../utils/useTranslation'
 
@@ -53,22 +54,13 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="hero-visual hero-signal-board" data-reveal data-reveal-style="right" data-reveal-delay="220" aria-hidden="true">
-          <div className="signal-track signal-track-a">
-            <span className="signal-runner" />
-          </div>
-          <div className="signal-track signal-track-b">
-            <span className="signal-runner" />
-          </div>
-          <div className="signal-track signal-track-c">
-            <span className="signal-runner" />
-          </div>
-          <div className="signal-bars">
-            <span className="signal-bar signal-bar-1" />
-            <span className="signal-bar signal-bar-2" />
-            <span className="signal-bar signal-bar-3" />
-            <span className="signal-bar signal-bar-4" />
-          </div>
+        <div className="hero-visual hero-signal-board hero-helix-board" data-reveal data-reveal-style="right" data-reveal-delay="220" aria-hidden="true">
+          <img
+            alt=""
+            aria-hidden="true"
+            className="dna-helix landing-hero-helix"
+            src={helixMotifSrc}
+          />
         </div>
       </div>
     </section>
