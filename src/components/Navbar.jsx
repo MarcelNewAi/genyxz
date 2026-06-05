@@ -86,6 +86,7 @@ export default function Navbar({ variant = 'main' }) {
         >
           <span />
           <span />
+          <span />
         </button>
 
         <div className={`site-mobile-menu ${isOpen ? 'site-mobile-menu-open' : ''}`}>

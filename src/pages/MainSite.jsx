@@ -290,6 +290,7 @@ function HomePage() {
 
 function PartnerShowcase() {
   const [activeIndex, setActiveIndex] = useState(0)
+  const [isPartnerMenuOpen, setIsPartnerMenuOpen] = useState(false)
   const detailRef = useRef(null)
   const activePartner = partnerSlides[activeIndex]
 
@@ -303,12 +304,47 @@ function PartnerShowcase() {
     }
   }
 
+  const selectPartnerFromDropdown = (index) => {
+    setActiveIndex(index)
+    setIsPartnerMenuOpen(false)
+  }
+
   return (
     <section className="partnerji-showcase" id="partnerji">
       <div className="site-container partnerji-panel">
         <div className="partnerji-list-pane" data-reveal data-reveal-style="up">
           <p className="main-eyebrow">Partnerji</p>
           <h2 className="partnerji-list-title">Področja rešitev Dr<span className="brand-title-dot" aria-hidden="true" /> Best</h2>
+          <div className={`partnerji-mobile-select ${isPartnerMenuOpen ? 'partnerji-mobile-select-open' : ''}`}>
+            <span>Izberi področje</span>
+            <button
+              aria-controls="partnerji-mobile-options partnerji-detail"
+              aria-expanded={isPartnerMenuOpen}
+              className="partnerji-mobile-select-trigger"
+              onClick={() => setIsPartnerMenuOpen((current) => !current)}
+              type="button"
+            >
+              <span>{activePartner.name}</span>
+            </button>
+            <div
+              className={`partnerji-mobile-options ${isPartnerMenuOpen ? 'partnerji-mobile-options-open' : ''}`}
+              id="partnerji-mobile-options"
+              role="listbox"
+            >
+              {partnerSlides.map((partner, index) => (
+                <button
+                  aria-selected={index === activeIndex}
+                  className={index === activeIndex ? 'partnerji-mobile-option is-active' : 'partnerji-mobile-option'}
+                  key={partner.name}
+                  onClick={() => selectPartnerFromDropdown(index)}
+                  role="option"
+                  type="button"
+                >
+                  {partner.name}
+                </button>
+              ))}
+            </div>
+          </div>
           <div className="partnerji-list" role="tablist" aria-label="Partnerji">
             {partnerSlides.map((partner, index) => (
               <button
