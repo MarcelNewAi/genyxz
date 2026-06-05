@@ -9,13 +9,15 @@ export default function MarqueeStrip() {
     [t],
   )
 
-  const loopItems = [...items, ...items]
-
   return (
     <section className="marquee-section" aria-label={t('marquee.aria_label')}>
       <div className="marquee-track">
-        {loopItems.map((item, index) => (
-          <span className="marquee-item" key={`${item}-${index}`}>
+        {items.map((item, index) => (
+          <span
+            className="marquee-item"
+            key={item}
+            style={{ '--marquee-index': index }}
+          >
             <span className="marquee-dot" aria-hidden="true" />
             <span>{item}</span>
           </span>

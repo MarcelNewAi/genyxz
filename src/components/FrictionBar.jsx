@@ -12,7 +12,7 @@ export default function FrictionBar() {
   ]
 
   return (
-    <section className="friction-strip" aria-label={t('friction.aria_label')}>
+    <section className="main-section main-section-soft friction-strip" aria-label={t('friction.aria_label')}>
       <div className="site-container">
         <div className="friction-grid" data-reveal data-reveal-style="up">
           {items.map((item, index) => (

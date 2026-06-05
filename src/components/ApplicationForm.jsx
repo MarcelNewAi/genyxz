@@ -31,12 +31,12 @@ export default function ApplicationForm() {
   const [phone, setPhone] = useState('')
 
   return (
-    <section id="prijava" className="editorial-section section-application">
+    <section id="prijava" className="main-section main-section-soft section-application">
       <div className="site-container section-narrow">
-        <p className="section-label section-label-light" data-reveal data-reveal-style="clip">
+        <p className="main-eyebrow" data-reveal data-reveal-style="clip">
           {t('labels.prijava')}
         </p>
-        <h2 className="section-title" data-reveal data-reveal-style="up" data-reveal-delay="80">
+        <h2 className="main-section-title" data-reveal data-reveal-style="up" data-reveal-delay="80">
           {t('prijava.title')}
         </h2>
         <p className="section-subtitle" data-reveal data-reveal-style="up" data-reveal-delay="140">
@@ -107,7 +107,7 @@ export default function ApplicationForm() {
             value={phone}
           />
 
-          <button className="btn-premium btn-submit" type="submit">
+          <button className="btn-premium main-btn-primary btn-submit" type="submit">
             <span>{t('prijava.cta')}</span>
             <IconArrowUpRight />
           </button>

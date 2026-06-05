@@ -3,11 +3,11 @@
     "title": "GenYXZ",
     "tagline": "Nova generacija, ki razume prihodnost zdravja.",
     "description": "Gradimo novo generacijo, ki razume prihodnost zdravja in jo zna približati ljudem.",
-    "sticky_cta": "Prijavi se (2 minuti)",
-    "sticky_bar": "Prijavi se — traja 2 minuti"
+    "sticky_cta": "Izpolni prijavo",
+    "sticky_bar": "Izpolni prijavo"
   },
   "sticky": {
-    "text": "Prijavi se (2 minuti)"
+    "text": "Izpolni prijavo"
   },
   "labels": {
     "hero": "01 — Postani ambasador",
@@ -62,7 +62,8 @@
     "perk3": "vplivaš na razvoj skupnosti",
     "perk4": "postaneš mentor prihodnjim",
     "closing_line1": "Ne pridružiš se skupnosti.",
-    "closing_line2": "Ti jo soustvariš."
+    "closing_line2": "Ti jo soustvariš.",
+    "cta": "Soustvarjaj prvo generacijo"
   },
   "izberi_pot": {
     "label": "Izberi svojo pot",
@@ -80,7 +81,8 @@
     "skill2": "kako razložiti kompleksno idejo preprosto",
     "skill3": "kako organizirati dogodek (0 → 50 ljudi)",
     "skill4": "kako zgraditi svojo mrežo kontaktov",
-    "skill5": "kako razmišljati podjetniško"
+    "skill5": "kako razmišljati podjetniško",
+    "cta": "Začni graditi te veščine"
   },
   "koga_iscemo": {
     "label": "Koga iščemo",
@@ -92,7 +94,7 @@
   },
   "prijava": {
     "label": "Prijava",
-    "title": "Prijava (2 minuti)",
+    "title": "Prijavi se",
     "subtitle": "Samo povej, kdo si.",
     "field1_label": "Zakaj te to zanima?",
     "field2_label": "Kaj te trenutno najbolj motivira?",
@@ -103,7 +105,7 @@
     "field4_helper": "Vnesi email",
     "field5_label": "Telefon",
     "field5_helper": "Vnesi telefonsko številko",
-    "cta": "Prijavi se (2 minuti)"
+    "cta": "Pošlji prijavo"
   },
   "marquee": {
     "aria_label": "Teme programa",
@@ -156,7 +158,8 @@
     "social_3": "LinkedIn"
   },
   "final_cta": {
-    "title": "Samo povej, kdo si."
+    "title": "Samo povej, kdo si.",
+    "cta": "Naredi prvi korak"
   },
   "sections": {
     "hero_label": "01 — POSTANI AMBASADOR",

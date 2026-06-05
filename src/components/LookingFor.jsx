@@ -11,15 +11,15 @@ export default function LookingFor() {
   )
 
   return (
-    <section id="koga-iscemo" className="editorial-section section-light">
+    <section id="koga-iscemo" className="main-section">
       <div className="site-container section-narrow">
-        <p className="section-label section-label-light" data-reveal data-reveal-style="clip">
+        <p className="main-eyebrow" data-reveal data-reveal-style="clip">
           {t('labels.koga_iscemo')}
         </p>
         <p className="looking-opening" data-reveal data-reveal-style="up" data-reveal-delay="60">
           {t('koga_iscemo.opening')}
         </p>
-        <h2 className="section-title" data-reveal data-reveal-style="up" data-reveal-delay="80">
+        <h2 className="main-section-title" data-reveal data-reveal-style="up" data-reveal-delay="80">
           {t('koga_iscemo.title')}
         </h2>
 

@@ -37,11 +37,15 @@ export default function Navbar({ variant = 'main' }) {
     return (
       <header className={`site-nav ${isScrolled ? 'site-nav-scrolled' : ''}`}>
         <div className="site-container site-nav-inner site-nav-inner-landing">
+          <a className="landing-home-link" href="/">
+            Domov
+          </a>
+
           <a className="no-underline" href="#hero">
             <LogoWordmark />
           </a>
 
-          <a className="btn-premium btn-nav" href="#prijava">
+          <a className="btn-premium main-btn-primary btn-nav" href="#prijava" aria-label={t('hero.cta')}>
             <span>{t('hero.cta')}</span>
             <IconArrowUpRight />
           </a>

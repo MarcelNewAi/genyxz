@@ -31,11 +31,30 @@ const workCards = [
 ]
 
 const practiceItems = [
-  'Ambasador organizira manjši dogodek ali predstavitev.',
-  'Vodi pogovor z ljudmi, ki jih tematika zanima.',
-  'Povezuje posameznike z relevantnimi informacijami.',
-  'Gradi svojo mrežo kontaktov.',
-  'Znanje vedno povezuje s prakso.',
+  {
+    body: 'Ljudem na razumljiv način predstavimo nove možnosti na področju preventive, zdravja in dolgoročne zaščite.',
+    title: 'Približujemo sodobne pristope k zdravju',
+  },
+  {
+    body: 'Spodbujamo razmišljanje o tem, kako lahko vsak posameznik že danes naredi več za svojo zdravstveno zaščito.',
+    title: 'Odpiramo pomembne pogovore',
+  },
+  {
+    body: 'Pomagamo posameznikom poiskati preverjene informacije ter jih usmerjamo do vsebin in rešitev, ki jim lahko koristijo.',
+    title: 'Povezujemo ljudi z informacijami in rešitvami',
+  },
+  {
+    body: 'Povezujemo ljudi s podobnimi interesi ter ustvarjamo okolje za izmenjavo izkušenj, znanja in dobrih praks.',
+    title: 'Gradimo skupnosti zaupanja',
+  },
+  {
+    body: 'Ljudem pomagamo razumeti različne možnosti, ki so na voljo, kar jim omogoča, da sprejemajo boljše odločitve glede zaščite svojega zdravja.',
+    title: 'Pomagamo pri boljših odločitvah',
+  },
+  {
+    body: 'Smo del generacije, ki povezuje ljudi, znanje in sodobne pristope k zdravju ter pomagamo graditi bolj informirano družbo.',
+    title: 'Soustvarjamo prihodnost zdravja',
+  },
 ]
 
 const workPillars = [
@@ -47,16 +66,16 @@ const workPillars = [
     number: '01',
   },
   {
-    body: 'Majhni dogodki, predstavitve, neformalna srečanja. Kjer se ljudje lahko vprašajo, ne da bi se počutili neumno.',
-    heading: 'Organiziramo pogovore in dogodke',
-    icon: <IconHeartUsers />,
+    body: 'Od preventivnih rešitev do sodobnih zdravstvenih storitev. Ambasador usmerja, ne prodaja.',
+    heading: 'Povezujemo ljudi z relevantnimi informacijami',
+    icon: <IconNetwork />,
     id: 'two',
     number: '02',
   },
   {
-    body: 'Od preventivnih rešitev do sodobnih zdravstvenih storitev. Ambasador usmerja, ne prodaja.',
-    heading: 'Povezujemo ljudi z relevantnimi informacijami',
-    icon: <IconNetwork />,
+    body: 'Majhni dogodki, predstavitve, neformalna srečanja. Kjer se ljudje lahko vprašajo, ne da bi se počutili neumno.',
+    heading: 'Organiziramo pogovore in dogodke',
+    icon: <IconHeartUsers />,
     id: 'three',
     number: '03',
   },
@@ -115,54 +134,39 @@ const partners = [
 
 const partnerSlides = [
   {
-    bg: '#ffffff',
-    description: 'Digitalna zdravstvena podpora, ki omogoča hiter dostop do strokovnega pogovora in jasnejših odločitev o zdravju.',
-    href: 'https://www.abiglobalhealth.com/',
-    logo: '/locales/sl/images/Abi.svg',
-    name: 'Abi Health',
-  },
-  {
-    bg: '#133156',
-    description: 'Partner za preventivo, dolgoročno skrb in rešitve, ki ljudem pomagajo razumeti zdravje kot vsakodnevno odločitev.',
-    href: 'https://dr-best.si/',
-    logo: '/locales/sl/images/Dr Best.svg',
-    logoTone: 'dr-best',
-    name: 'Dr Best',
-    theme: 'dark',
-  },
-  {
-    bg: '#ffffff',
-    description: 'Mednarodna podpora pri zahtevnejših zdravstvenih poteh, kjer sta pomembna drugo mnenje in prava usmeritev.',
-    href: 'https://www.wegofurther.com/',
-    logo: '/locales/sl/images/Further.svg',
-    name: 'Further',
-  },
-  {
-    bg: '#032a6c',
-    description: 'Zavarovalniška in partnerska mreža, ki povezuje zaščito, zaupanje in dolgoročno stabilnost za posameznike.',
-    href: 'https://axeria.fr/en/',
-    logo: '/locales/sl/images/Axeria.svg',
-    logoTone: 'axeria',
-    name: 'Axeria',
-    theme: 'dark',
-  },
-  {
-    bg: '#ffffff',
-    description: 'Globalna platforma za virtualno oskrbo, ki približuje zdravniško podporo ljudem tam, kjer jo potrebujejo.',
-    href: 'https://www.teladochealth.com/',
-    logo: '/locales/sl/images/Teladoc Health.svg',
-    name: 'Teladoc Health',
-  },
-  {
-    bg: '#ffffff',
-    description: 'Genetsko znanje in preventivni vpogledi, ki pomagajo bolje razumeti telo, tveganja in dolgoročne zdravstvene odločitve.',
-    href: 'https://geneplanet.com/sl',
+    description: 'Napredne genetske analize, ki posamezniku pomagajo bolje razumeti svoje telo, potencialna tveganja in možnosti za bolj informirane odločitve.',
     logo: '/locales/sl/images/GenePlanet.svg',
     name: 'GenePlanet',
+    subtitle: 'Preventiva in genetika',
+  },
+  {
+    description: 'Hiter dostop do zdravstvenega pogovora s slovenskimi zdravniki in strokovne podpore - 24/7.',
+    logo: '/locales/sl/images/Abi.svg',
+    name: 'Abi Global Health',
+    subtitle: 'Digitalni dostop do zdravnika',
+  },
+  {
+    description: 'Dostop do vodilnih medicinskih strokovnjakov in neodvisnega drugega mnenja in načrta zdravljenja pri zahtevnejših zdravstvenih primerih.',
+    logo: '/locales/sl/images/Teladoc Health.svg',
+    name: 'Teladoc Health - Best Doctors',
+    subtitle: 'Ekspertno drugo mnenje',
+  },
+  {
+    description: 'Podpora pri iskanju najboljših možnosti zdravljenja v mednarodnem okolju in dostop do centrov odličnosti. Dostop do najnovejših kliničnih študij. S popolno organizacijsko in finančno podporo.',
+    logo: '/locales/sl/images/Further.svg',
+    name: 'Further',
+    subtitle: 'Organizacija zdravljenja v tujini',
+  },
+  {
+    description: 'Finančna zaščita posameznika in družine v primeru resnih zdravstvenih dogodkov. Mednarodna zavarovalna in pozavarovalna podpora, ki zagotavlja stabilnost in dolgoročno vzdržnost zdravstvenih rešitev.',
+    logo: '/locales/sl/images/Axeria.svg',
+    logoTone: 'axeria',
+    name: 'Axeria IARD & Arch Reinsurance',
+    subtitle: 'Zavarovalna zaščita',
   },
 ]
 
-function PageHero({ eyebrow, title, text }) {
+function PageHero({ actionHref, actionLabel, eyebrow, title, text }) {
   return (
     <section className="main-hero main-page-hero">
       <img alt="" aria-hidden="true" className="dna-helix main-hero-helix" src={helixMotifSrc} />
@@ -171,6 +175,13 @@ function PageHero({ eyebrow, title, text }) {
           {eyebrow ? <p className="main-eyebrow" data-reveal data-reveal-style="clip">{eyebrow}</p> : null}
           <h1 data-reveal data-reveal-style="up" data-reveal-delay="80">{title}</h1>
           <p className="main-lead" data-reveal data-reveal-style="up" data-reveal-delay="180">{text}</p>
+          {actionHref && actionLabel ? (
+            <div className="main-actions" data-reveal data-reveal-style="up" data-reveal-delay="280">
+              <a className="btn-premium main-btn-primary" href={actionHref}>
+                {actionLabel} <IconArrowUpRight />
+              </a>
+            </div>
+          ) : null}
         </div>
       </div>
     </section>
@@ -242,9 +253,16 @@ function HomePage() {
 
       <section className="main-section">
         <div className="site-container main-timeline-wrap">
-          <h2 className="main-section-title" data-reveal data-reveal-style="up">Kako izgleda v praksi</h2>
+          <h2 className="main-section-title" data-reveal data-reveal-style="up">Kako GenYXZ ambasadorji pomagamo ljudem</h2>
           <ol className="main-timeline">
-            {practiceItems.map((item) => <li data-reveal data-reveal-style="up" key={item}>{item}</li>)}
+            {practiceItems.map((item) => (
+              <li data-reveal data-reveal-style="up" key={item.title}>
+                <span>
+                  <strong>{item.title}</strong>
+                  <span>{item.body}</span>
+                </span>
+              </li>
+            ))}
           </ol>
         </div>
       </section>
@@ -290,7 +308,7 @@ function PartnerShowcase() {
       <div className="site-container partnerji-panel">
         <div className="partnerji-list-pane" data-reveal data-reveal-style="up">
           <p className="main-eyebrow">Partnerji</p>
-          <h2 className="partnerji-list-title">Partnerji</h2>
+          <h2 className="partnerji-list-title">Področja rešitev Dr<span className="brand-title-dot" aria-hidden="true" /> Best</h2>
           <div className="partnerji-list" role="tablist" aria-label="Partnerji">
             {partnerSlides.map((partner, index) => (
               <button
@@ -302,9 +320,6 @@ function PartnerShowcase() {
                 role="tab"
                 type="button"
               >
-                <span className="partnerji-list-logo-wrap">
-                  <img alt="" className={partner.logoTone ? `partnerji-logo-${partner.logoTone}` : undefined} src={partner.logo} />
-                </span>
                 <span>{partner.name}</span>
               </button>
             ))}
@@ -323,7 +338,7 @@ function PartnerShowcase() {
             className={`partnerji-detail-logo ${activePartner.logoTone ? `partnerji-logo-${activePartner.logoTone}` : ''}`}
             src={activePartner.logo}
           />
-          <h2>{activePartner.name}</h2>
+          <h3>{activePartner.subtitle}</h3>
           <p>{activePartner.description}</p>
         </article>
       </div>
@@ -334,25 +349,53 @@ function PartnerShowcase() {
 function AboutPage() {
   return (
     <>
-      <PageHero title="Ne gradimo samo strani. Gradimo razumevanje prihodnosti zdravja." text="GenYXZ povezuje znanje, ljudi in sodobne rešitve, ki lahko spremenijo način, kako skrbimo za svoje zdravje." />
+      <PageHero title="Gradimo razumevanje prihodnosti zdravja." text="GenYXZ povezuje ljudi, znanje in sodobne zdravstvene rešitve, ki spreminjajo način, kako skrbimo za svoje zdravje. Verjamemo, da prihodnost zdravja ne temelji le na zdravljenju bolezni, temveč predvsem na preventivi, zgodnjem ukrepanju, dostopu do pravih informacij in boljših odločitvah. Naš cilj je, da to znanje približamo ljudem na razumljiv, praktičen in dostopen način." />
       <section className="main-section">
         <div className="site-container main-split">
           <div>
-            <h2 data-reveal data-reveal-style="up">Naša vizija</h2>
-            <p className="main-rich-text" data-reveal data-reveal-style="up" data-reveal-delay="80">Gradimo skupnost, ki razume prihodnost zdravja, zna kompleksne stvari razložiti preprosto, povezuje ljudi, znanje in prakso ter aktivno vpliva na okolje, v katerem živi.</p>
+            <h2 data-reveal data-reveal-style="up">Naša <span className="brand-gradient-text">vizija</span></h2>
+            <div className="main-rich-text" data-reveal data-reveal-style="up" data-reveal-delay="80">
+              <p>Gradimo skupnost ljudi, ki:</p>
+              <ul className="main-text-list main-vision-list">
+                <li><IconCheck />razume prihodnost zdravja,</li>
+                <li><IconCheck />zna kompleksne teme razložiti preprosto,</li>
+                <li><IconCheck />povezuje znanje, ljudi in prakso,</li>
+                <li><IconCheck />ustvarja pozitiven vpliv v svojem okolju.</li>
+              </ul>
+              <p>Razvijamo ambasadorje znanja, zaupanja in odgovornega odnosa do zdravja.</p>
+            </div>
           </div>
           <div>
-            <h2 data-reveal data-reveal-style="up">Zakaj to obstaja</h2>
-            <p className="main-rich-text" data-reveal data-reveal-style="up" data-reveal-delay="80">Živimo v času hitrega razvoja tehnologije, sprememb življenjskega sloga in naraščajočega stresa. Hkrati znanost napreduje hitreje kot kadarkoli prej.</p>
-            <p className="main-rich-text" data-reveal data-reveal-style="up" data-reveal-delay="140">Problem ni več, ali rešitve obstajajo. Problem je, da jih večina ljudi še ne pozna ali razume.</p>
+            <h2 data-reveal data-reveal-style="up">Zakaj GenYXZ obstaja</h2>
+            <div className="main-rich-text" data-reveal data-reveal-style="up" data-reveal-delay="80">
+              <p>Živimo v času hitrega razvoja tehnologije, genetike, umetne inteligence in sodobne medicine.</p>
+              <p>Danes obstajajo rešitve, ki lahko pomagajo pri zgodnejšem odkrivanju tveganj, hitrejšem dostopu do zdravniškega mnenja, organizaciji zdravljenja v tujini in boljši zdravstveni zaščiti.</p>
+              <p>Problem ni več, ali rešitve obstajajo. Problem je, da jih večina ljudi ne pozna, ne razume ali ne ve, kako jih uporabiti.</p>
+              <p>GenYXZ ambasadorji znajo povezovati znanje, prakso in rešitve.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="main-section main-section-soft about-ecosystem-section">
+        <div className="site-container about-ecosystem-inner">
+          <h2 className="main-section-title about-ecosystem-title" data-reveal data-reveal-style="up">Ekosistem partnerjev, ki oblikujejo prihodnost zdravja</h2>
+          <p className="about-ecosystem-subtitle" data-reveal data-reveal-style="up" data-reveal-delay="80">Prihodnost zdravja ne gradi eno podjetje. Gradi jo <span className="brand-gradient-text">ekosistem</span>.</p>
+          <div className="main-rich-text about-ecosystem-text" data-reveal data-reveal-style="up" data-reveal-delay="140">
+            <p>Blagovna znamka Dr Best povezuje vodilne mednarodne partnerje s področja genetike, digitalnega zdravstva, ekspertnega drugega mnenja, precizne in personalizirane medicine in globalne zdravstvene zaščite.</p>
+            <p>Skupaj ustvarjajo celovit zdravstveni ekosistem, ki posamezniku omogoča dostop do vrhunskih rešitev skozi vsa življenjska obdobja - od preventive do zdravljenja in dolgoročne zaščite.</p>
+            <p>GenYXZ pomaga to prihodnost zdravja približati ljudem.</p>
           </div>
         </div>
       </section>
       <PartnerShowcase />
       <section className="main-section">
         <div className="site-container">
-          <h2 className="main-section-title" data-reveal data-reveal-style="up">Sodelujemo z organizacijami, ki razvijajo prihodnost zdravja.</h2>
-          <p className="main-rich-text main-section-intro" data-reveal data-reveal-style="up">Delujemo v okolju, kjer se stikajo preventiva, sodobna medicina in dolgoročna zaščita. Naš namen je to znanje približati ljudem na razumljiv, dostopen in praktičen način.</p>
+          <h2 className="main-section-title" data-reveal data-reveal-style="up">Kje je v tej zgodbi GenYXZ?</h2>
+          <div className="main-rich-text main-section-intro" data-reveal data-reveal-style="up">
+            <p>GenYXZ je skupnost ambasadorjev, ki pomaga ljudem razumeti prihodnost zdravja. Povezujemo posameznike z znanjem, informacijami in vrhunskimi globalnimi rešitvami, ki so bile še pred nekaj leti dostopne le redkim.</p>
+            <p>Skozi pogovore, dogodke in skupnost gradijo most med sodobnimi zdravstvenimi možnostmi in ljudmi, ki jih lahko uporabijo za boljše odločitve, večjo varnost in boljšo kakovost življenja.</p>
+            <p>Prihodnost zdravja ni odvisna samo od tehnologije, odvisna je tudi od ljudi, ki jo znajo približati drugim.</p>
+          </div>
           <div className="partner-marquee" data-reveal data-reveal-style="up">
             <div className="partner-track">
               {[...partners, ...partners].map((partner, index) => (
@@ -458,7 +501,12 @@ function WorkPage() {
 function AmbassadorsPage() {
   return (
     <>
-      <PageHero title="Ambasador je človek, ki zna idejo približati drugim." text="Ni pomembno, ali prihajaš iz sveta športa, študija, dela z ljudmi ali osebnega razvoja. Pomembno je, da te zanima prihodnost zdravja in da želiš znanje deliti naprej." />
+      <PageHero
+        actionHref={ambassadorLandingUrl}
+        actionLabel="Postani ambasador"
+        title="Ambasador je človek, ki zna idejo približati drugim."
+        text="Ni pomembno, ali prihajaš iz sveta športa, študija, dela z ljudmi ali osebnega razvoja. Pomembno je, da te zanima prihodnost zdravja in da želiš znanje deliti naprej."
+      />
       <section className="main-section">
         <div className="site-container">
           <h2 className="main-section-title" data-reveal data-reveal-style="up">Kdo so naši ambasadorji</h2>

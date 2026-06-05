@@ -11,16 +11,10 @@ export default function FirstGeneration() {
   )
 
   return (
-    <section id="prva-generacija" className="editorial-section section-dark-gradient">
-      <div className="dark-atmosphere" aria-hidden="true">
-        <span className="dark-grid" />
-        <span className="dark-line dark-line-a" />
-        <span className="dark-line dark-line-b" />
-      </div>
-
+    <section id="prva-generacija" className="main-section main-ambassador-band landing-generation-section">
       <div className="site-container section-narrow-wide">
         <div className="generation-spotlight">
-          <p className="section-label section-label-dark" data-reveal data-reveal-style="clip">
+          <p className="main-eyebrow landing-eyebrow-light" data-reveal data-reveal-style="clip">
             {t('labels.prva_generacija')}
           </p>
           <h2 className="section-title section-title-on-dark" data-reveal data-reveal-style="up" data-reveal-delay="80">
@@ -43,8 +37,8 @@ export default function FirstGeneration() {
               <span>{t('prva_generacija.closing_line1')}</span>
               <span className="pull-quote-strong">{t('prva_generacija.closing_line2')}</span>
             </p>
-            <a className="btn-premium" href="#prijava">
-              <span>{t('hero.cta')}</span>
+            <a className="btn-premium main-btn-primary ambassador-final-cta-button" href="#prijava">
+              <span>{t('prva_generacija.cta')}</span>
               <IconArrow />
             </a>
           </div>

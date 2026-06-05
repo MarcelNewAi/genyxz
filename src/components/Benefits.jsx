@@ -22,12 +22,12 @@ export default function Benefits() {
   )
 
   return (
-    <section id="kaj-pridobis" className="editorial-section section-surface section-rhythm-compact">
+    <section id="kaj-pridobis" className="main-section main-section-soft">
       <div className="site-container">
-        <p className="section-label section-label-light" data-reveal data-reveal-style="clip">
+        <p className="main-eyebrow" data-reveal data-reveal-style="clip">
           {t('labels.kaj_pridobis')}
         </p>
-        <h2 className="section-title" data-reveal data-reveal-style="up" data-reveal-delay="80">
+        <h2 className="main-section-title" data-reveal data-reveal-style="up" data-reveal-delay="80">
           {t('kaj_pridobis.title')}
         </h2>
 
@@ -43,8 +43,8 @@ export default function Benefits() {
         </div>
 
         <div className="section-cta" data-reveal data-reveal-style="up" data-reveal-delay="520">
-          <a className="btn-premium" href="#prijava">
-            <span>{t('hero.cta')}</span>
+          <a className="btn-premium main-btn-primary" href="#prijava">
+            <span>{t('kaj_pridobis.cta')}</span>
             <IconArrow />
           </a>
         </div>

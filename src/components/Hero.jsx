@@ -25,42 +25,30 @@ export default function Hero() {
   }, [t])
 
   return (
-    <section id="hero" className="hero-section editorial-section section-light">
-      <div className="hero-atmosphere" aria-hidden="true">
-        <span className="hero-grid-overlay" />
-      </div>
-
-      <div className="site-container hero-grid">
-        <div className="hero-content">
-          <p className="section-label section-label-light" data-reveal data-reveal-style="clip">
+    <section id="hero" className="main-hero landing-main-hero">
+      <img alt="" aria-hidden="true" className="dna-helix main-hero-helix landing-main-hero-helix" src={helixMotifSrc} />
+      <div className="site-container main-hero-grid">
+        <div className="main-hero-copy landing-main-hero-copy">
+          <p className="main-eyebrow" data-reveal data-reveal-style="clip">
             {t('labels.hero')}
           </p>
 
-          <h1 className="hero-title" data-reveal data-reveal-style="up" data-reveal-delay="80">
+          <h1 data-reveal data-reveal-style="up" data-reveal-delay="80">
             <span className="block">{t('hero.title_line1')}</span>
             <span className="block">{secondLine}</span>
           </h1>
 
-          <p className="hero-text" data-reveal data-reveal-style="up" data-reveal-delay="180">
+          <p className="main-lead" data-reveal data-reveal-style="up" data-reveal-delay="180">
             {t('hero.text')}
           </p>
 
-          <div className="hero-actions" data-reveal data-reveal-style="up" data-reveal-delay="260">
-            <a className="btn-premium btn-hero" href="#prijava">
+          <div className="main-actions landing-main-actions" data-reveal data-reveal-style="up" data-reveal-delay="260">
+            <a className="btn-premium main-btn-primary" href="#prijava">
               <span>{t('hero.cta')}</span>
               <IconArrow />
             </a>
             <p className="hero-micro">{t('hero.micro_text')}</p>
           </div>
-        </div>
-
-        <div className="hero-visual hero-signal-board hero-helix-board" data-reveal data-reveal-style="right" data-reveal-delay="220" aria-hidden="true">
-          <img
-            alt=""
-            aria-hidden="true"
-            className="dna-helix landing-hero-helix"
-            src={helixMotifSrc}
-          />
         </div>
       </div>
     </section>

@@ -5,12 +5,12 @@ export default function ChoosePath() {
   const { t } = useTranslation()
 
   return (
-    <section id="izberi-pot" className="editorial-section section-light">
+    <section id="izberi-pot" className="main-section">
       <div className="site-container">
-        <p className="section-label section-label-light" data-reveal data-reveal-style="clip">
+        <p className="main-eyebrow" data-reveal data-reveal-style="clip">
           {t('labels.izberi_pot')}
         </p>
-        <h2 className="section-title" data-reveal data-reveal-style="up" data-reveal-delay="80">
+        <h2 className="main-section-title" data-reveal data-reveal-style="up" data-reveal-delay="80">
           {t('izberi_pot.title')}
         </h2>
 
