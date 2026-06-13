@@ -315,7 +315,7 @@ function PartnerShowcase() {
       <div className="site-container partnerji-panel">
         <div className="partnerji-list-pane" data-reveal data-reveal-style="up">
           <p className="main-eyebrow">Partnerji</p>
-          <h2 className="partnerji-list-title">Področja rešitev Dr<span className="brand-title-dot" aria-hidden="true" /> Best</h2>
+          <h2 className="partnerji-list-title">Področja rešitev Dr Best</h2>
           <div className={`partnerji-mobile-select ${isPartnerMenuOpen ? 'partnerji-mobile-select-open' : ''}`}>
             <span>Izberi področje</span>
             <button
