@@ -6,7 +6,17 @@ function LogoWordmark() {
   const { t } = useTranslation()
   const title = t('site.title')
 
-  return <img alt={title} className="brand-logo brand-logo-nav" height="145" src="/Logo - GenYXZ.svg" width="500" />
+  return (
+    <img
+      alt={title}
+      className="brand-logo brand-logo-nav"
+      decoding="async"
+      fetchPriority="high"
+      height="1065"
+      src="/locales/sl/dna-logo-bg.svg"
+      width="1477"
+    />
+  )
 }
 
 export default function Navbar({ variant = 'main' }) {

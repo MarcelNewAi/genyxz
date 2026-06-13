@@ -235,8 +235,9 @@
   }
 
   .brand-logo-nav {
-    width: clamp(118px, 11vw, 158px);
-    height: auto;
+    width: auto;
+    height: clamp(64px, 6.2vw, 78px);
+    max-width: none;
   }
 
   .brand-logo-footer {
@@ -3472,8 +3473,8 @@ body {
   }
 
   .brand-logo-nav {
-    width: clamp(126px, 18vw, 148px);
-    height: auto;
+    width: auto;
+    height: 58px;
   }
 
   .site-nav-inner {
@@ -3745,8 +3746,8 @@ body {
   }
 
   .brand-logo-nav {
-    width: 132px;
-    height: auto;
+    width: auto;
+    height: 54px;
   }
 
   .site-nav-inner {
