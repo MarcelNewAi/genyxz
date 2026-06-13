@@ -7,7 +7,7 @@
 - `type: "contact"` sends contact messages.
 - `type: "application"` sends ambassador applications.
 
-The function validates and escapes submitted values, rejects honeypot submissions, rate-limits requests, and sends distinct HTML emails through Resend.
+The function validates and escapes submitted values, rejects honeypot submissions, rate-limits requests, and sends distinct HTML emails through Resend. Each valid submission sends an internal notification and a matching confirmation email to the submitter in one strict Resend batch.
 
 ## Environment Variables
 
@@ -33,4 +33,7 @@ Run the site and functions together:
 netlify dev
 ```
 
-Submit both forms and confirm their distinct emails arrive at `info@genyxz.si` with the submitter set as Reply-To.
+Submit both forms and confirm:
+
+- Their distinct internal emails arrive at `info@genyxz.si` with the submitter set as Reply-To.
+- The submitter receives the matching contact or ambassador confirmation email.

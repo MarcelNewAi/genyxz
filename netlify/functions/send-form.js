@@ -93,6 +93,8 @@ const row = (label, value) => `
     <div style="font-size:16px;line-height:1.6;">${formatText(value)}</div>
   </div>`
 
+const paragraph = (value) => `<p style="margin:0 0 16px;font-size:16px;line-height:1.7;">${formatText(value)}</p>`
+
 function buildContactEmail(payload) {
   return {
     html: emailFrame({
@@ -122,6 +124,29 @@ function buildApplicationEmail(payload) {
       title: path,
     }),
     subject: `[GenYXZ prijava] ${payload.name} - ${path}`,
+  }
+}
+
+function buildConfirmationEmail(payload) {
+  const isContact = payload.type === 'contact'
+
+  return {
+    html: emailFrame({
+      accent: isContact
+        ? 'linear-gradient(90deg,#111111,#2baeba)'
+        : 'linear-gradient(90deg,#7e2392,#88ea4e)',
+      content:
+        paragraph(`Živjo, ${payload.name}.`) +
+        paragraph(
+          isContact
+            ? 'Hvala za tvoje sporočilo. Uspešno smo ga prejeli in odgovorili ti bomo v najkrajšem možnem času.'
+            : 'Hvala za tvojo prijavo za GenYXZ ambasadorja. Uspešno smo jo prejeli, jo bomo pregledali in stopili v stik s tabo v najkrajšem možnem času.',
+        ) +
+        paragraph('Lep pozdrav,\nekipa GenYXZ'),
+      eyebrow: isContact ? 'Potrdilo o prejetem sporočilu' : 'Potrdilo o prejeti prijavi',
+      title: isContact ? 'Prejeli smo tvoje sporočilo.' : 'Prejeli smo tvojo prijavo.',
+    }),
+    subject: isContact ? 'Prejeli smo tvoje sporočilo | GenYXZ' : 'Prejeli smo tvojo prijavo | GenYXZ',
   }
 }
 
@@ -158,18 +183,29 @@ export default async function handler(request) {
   }
 
   try {
-    const email = payload.type === 'contact' ? buildContactEmail(payload) : buildApplicationEmail(payload)
+    const internalEmail = payload.type === 'contact' ? buildContactEmail(payload) : buildApplicationEmail(payload)
+    const confirmationEmail = buildConfirmationEmail(payload)
     const resend = new Resend(apiKey)
-    const { error } = await resend.emails.send({
-      from: `GenYXZ <${fromEmail}>`,
-      html: email.html,
-      replyTo: payload.email,
-      subject: email.subject,
-      to: [toEmail],
-    })
+    const from = `GenYXZ <${fromEmail}>`
+    const { error } = await resend.batch.send([
+      {
+        from,
+        html: internalEmail.html,
+        replyTo: payload.email,
+        subject: internalEmail.subject,
+        to: [toEmail],
+      },
+      {
+        from,
+        html: confirmationEmail.html,
+        replyTo: toEmail,
+        subject: confirmationEmail.subject,
+        to: [payload.email],
+      },
+    ])
 
     if (error) {
-      console.error('Resend failed to send form email:', error)
+      console.error('Resend failed to send form email batch:', error)
       return json({ message: 'Pošiljanje ni uspelo. Poskusi znova.', ok: false }, 500)
     }
   } catch (error) {
