@@ -139,14 +139,14 @@ function buildConfirmationEmail(payload) {
         paragraph(`Živjo, ${payload.name}.`) +
         paragraph(
           isContact
-            ? 'Hvala za tvoje sporočilo. Uspešno smo ga prejeli in odgovorili ti bomo v najkrajšem možnem času.'
-            : 'Hvala za tvojo prijavo za GenYXZ ambasadorja. Uspešno smo jo prejeli, jo bomo pregledali in stopili v stik s tabo v najkrajšem možnem času.',
+            ? 'Zahvaljujemo se vam za vaše sporočilo. Uspešno smo ga prejeli in odgovorili vam bomo v najkrajšem možnem času.'
+            : 'Zahvaljujemo se vam za vašo prijavo za GenYXZ ambasadorja. Vašo prijavo bomo pregledali in stopili v stik z vami v najkrajšem možnem času.',
         ) +
         paragraph('Lep pozdrav,\nekipa GenYXZ'),
       eyebrow: isContact ? 'Potrdilo o prejetem sporočilu' : 'Potrdilo o prejeti prijavi',
-      title: isContact ? 'Prejeli smo tvoje sporočilo.' : 'Prejeli smo tvojo prijavo.',
+      title: isContact ? 'Prejeli smo vaše sporočilo.' : 'Prejeli smo vašo prijavo.',
     }),
-    subject: isContact ? 'Prejeli smo tvoje sporočilo | GenYXZ' : 'Prejeli smo tvojo prijavo | GenYXZ',
+    subject: isContact ? 'Prejeli smo vaše sporočilo | GenYXZ' : 'Prejeli smo vašo prijavo | GenYXZ',
   }
 }
 
@@ -179,7 +179,7 @@ export default async function handler(request) {
 
   if (!apiKey || !fromEmail || !toEmail || apiKey === 're_replace_with_api_key') {
     console.error('Resend environment variables are not configured.')
-    return json({ message: 'Pošiljanje ni uspelo. Poskusi znova.', ok: false }, 500)
+    return json({ message: 'Pošiljanje ni uspelo. Poskusite znova.', ok: false }, 500)
   }
 
   try {
@@ -206,11 +206,11 @@ export default async function handler(request) {
 
     if (error) {
       console.error('Resend failed to send form email batch:', error)
-      return json({ message: 'Pošiljanje ni uspelo. Poskusi znova.', ok: false }, 500)
+      return json({ message: 'Pošiljanje ni uspelo. Poskusite znova.', ok: false }, 500)
     }
   } catch (error) {
     console.error('Resend request failed:', error)
-    return json({ message: 'Pošiljanje ni uspelo. Poskusi znova.', ok: false }, 500)
+    return json({ message: 'Pošiljanje ni uspelo. Poskusite znova.', ok: false }, 500)
   }
 
   return json({ ok: true })
