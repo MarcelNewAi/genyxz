@@ -1,8 +1,9 @@
 ﻿import { useState } from 'react'
 import { IconArrowUpRight } from './Icons'
+import { submitForm } from '../utils/submitForm'
 import { useTranslation } from '../utils/useTranslation'
 
-function FloatingField({ helper, id, isTextarea = false, label, onChange, rows = 3, type = 'text', value }) {
+function FloatingField({ helper, id, isTextarea = false, label, onChange, required = false, rows = 3, type = 'text', value }) {
   const Control = isTextarea ? 'textarea' : 'input'
 
   return (
@@ -11,6 +12,7 @@ function FloatingField({ helper, id, isTextarea = false, label, onChange, rows =
         id={id}
         onChange={onChange}
         placeholder=" "
+        required={required}
         rows={isTextarea ? rows : undefined}
         type={isTextarea ? undefined : type}
         value={value}
@@ -24,11 +26,38 @@ function FloatingField({ helper, id, isTextarea = false, label, onChange, rows =
 
 export default function ApplicationForm() {
   const { t } = useTranslation()
+  const [name, setName] = useState('')
   const [path, setPath] = useState('community')
   const [reason, setReason] = useState('')
   const [motivation, setMotivation] = useState('')
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
+  const [website, setWebsite] = useState('')
+  const [status, setStatus] = useState({ message: '', type: 'idle' })
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+
+    if (status.type === 'sending') {
+      return
+    }
+
+    setStatus({ message: 'Pošiljanje prijave ...', type: 'sending' })
+
+    try {
+      await submitForm({ email, motivation, name, path, phone, reason, type: 'application', website })
+      setName('')
+      setPath('community')
+      setReason('')
+      setMotivation('')
+      setEmail('')
+      setPhone('')
+      setWebsite('')
+      setStatus({ message: 'Prijava je bila uspešno poslana.', type: 'success' })
+    } catch (error) {
+      setStatus({ message: error.message, type: 'error' })
+    }
+  }
 
   return (
     <section id="prijava" className="main-section main-section-soft section-application">
@@ -43,12 +72,21 @@ export default function ApplicationForm() {
           {t('prijava.subtitle')}
         </p>
 
-        <form className="application-form" onSubmit={(event) => event.preventDefault()} data-reveal data-reveal-style="up" data-reveal-delay="200">
+        <form className="application-form" onSubmit={handleSubmit} data-reveal data-reveal-style="up" data-reveal-delay="200">
+          <FloatingField
+            id="field-name"
+            label={t('prijava.field_name_label')}
+            onChange={(event) => setName(event.target.value)}
+            required
+            value={name}
+          />
+
           <FloatingField
             id="field-reason"
             isTextarea
             label={t('prijava.field1_label')}
             onChange={(event) => setReason(event.target.value)}
+            required
             rows={5}
             value={reason}
           />
@@ -58,6 +96,7 @@ export default function ApplicationForm() {
             isTextarea
             label={t('prijava.field2_label')}
             onChange={(event) => setMotivation(event.target.value)}
+            required
             rows={5}
             value={motivation}
           />
@@ -70,6 +109,7 @@ export default function ApplicationForm() {
                   checked={path === 'community'}
                   name="path"
                   onChange={() => setPath('community')}
+                  required
                   type="radio"
                   value="community"
                 />
@@ -81,6 +121,7 @@ export default function ApplicationForm() {
                   checked={path === 'lifestyle'}
                   name="path"
                   onChange={() => setPath('lifestyle')}
+                  required
                   type="radio"
                   value="lifestyle"
                 />
@@ -94,6 +135,7 @@ export default function ApplicationForm() {
             id="field-email"
             label={t('prijava.field4_label')}
             onChange={(event) => setEmail(event.target.value)}
+            required
             type="email"
             value={email}
           />
@@ -103,14 +145,23 @@ export default function ApplicationForm() {
             id="field-phone"
             label={t('prijava.field5_label')}
             onChange={(event) => setPhone(event.target.value)}
+            required
             type="tel"
             value={phone}
           />
 
-          <button className="btn-premium main-btn-primary btn-submit" type="submit">
-            <span>{t('prijava.cta')}</span>
+          <label className="form-honeypot" aria-hidden="true">
+            Spletna stran
+            <input autoComplete="off" name="website" onChange={(event) => setWebsite(event.target.value)} tabIndex="-1" value={website} />
+          </label>
+
+          <button className="btn-premium main-btn-primary btn-submit" disabled={status.type === 'sending'} type="submit">
+            <span>{status.type === 'sending' ? 'Pošiljanje ...' : t('prijava.cta')}</span>
             <IconArrowUpRight />
           </button>
+          <p aria-live="polite" className={`form-status form-status-${status.type}`}>
+            {status.message}
+          </p>
         </form>
 
       </div>

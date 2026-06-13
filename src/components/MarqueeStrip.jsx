@@ -12,15 +12,15 @@ export default function MarqueeStrip() {
   return (
     <section className="marquee-section" aria-label={t('marquee.aria_label')}>
       <div className="marquee-track">
-        {items.map((item, index) => (
-          <span
-            className="marquee-item"
-            key={item}
-            style={{ '--marquee-index': index }}
-          >
-            <span className="marquee-dot" aria-hidden="true" />
-            <span>{item}</span>
-          </span>
+        {[false, true].map((isDuplicate) => (
+          <div aria-hidden={isDuplicate || undefined} className="marquee-group" key={String(isDuplicate)}>
+            {items.map((item) => (
+              <span className="marquee-item" key={item}>
+                <span className="marquee-dot" aria-hidden="true" />
+                <span>{item}</span>
+              </span>
+            ))}
+          </div>
         ))}
       </div>
     </section>

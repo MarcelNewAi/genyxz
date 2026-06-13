@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import helixMotifSrc from '../assets/images/genyxz-first-helix-photo-preserved.svg'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
+import { submitForm } from '../utils/submitForm'
 import {
   IconArrow,
   IconArrowUpRight,
@@ -582,9 +583,28 @@ function AmbassadorsPage() {
 }
 
 function ContactPage() {
-  const [form, setForm] = useState({ email: '', message: '', name: '' })
+  const [form, setForm] = useState({ email: '', message: '', name: '', website: '' })
+  const [status, setStatus] = useState({ message: '', type: 'idle' })
 
   const update = (field) => (event) => setForm((current) => ({ ...current, [field]: event.target.value }))
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+
+    if (status.type === 'sending') {
+      return
+    }
+
+    setStatus({ message: 'Pošiljanje sporočila ...', type: 'sending' })
+
+    try {
+      await submitForm({ ...form, type: 'contact' })
+      setForm({ email: '', message: '', name: '', website: '' })
+      setStatus({ message: 'Sporočilo je bilo uspešno poslano.', type: 'success' })
+    } catch (error) {
+      setStatus({ message: error.message, type: 'error' })
+    }
+  }
 
   return (
     <section className="main-section contact-section">
@@ -594,17 +614,26 @@ function ContactPage() {
           <p>Za vprašanja, sodelovanja ali več informacij nam lahko pišeš neposredno.</p>
         </div>
         <img alt="" aria-hidden="true" className="dna-helix contact-hero-helix" src={helixMotifSrc} />
-        <form className="contact-form" onSubmit={(event) => event.preventDefault()} data-reveal data-reveal-style="up" data-reveal-delay="120">
+        <form className="contact-form" onSubmit={handleSubmit} data-reveal data-reveal-style="up" data-reveal-delay="120">
           <div className="contact-form-header">
             <a className="contact-email" href="mailto:info@genyxz.si">info@genyxz.si</a>
             <div className="contact-socials" aria-label="Družbena omrežja">
               <a href="#instagram" aria-label="Instagram"><IconInstagram /></a>
             </div>
           </div>
-          <label>Ime<input onChange={update('name')} type="text" value={form.name} /></label>
-          <label>Email<input onChange={update('email')} type="email" value={form.email} /></label>
-          <label>Sporočilo<textarea onChange={update('message')} rows={5} value={form.message} /></label>
-          <button className="btn-premium main-btn-primary" type="submit">Pošlji</button>
+          <label>Ime<input onChange={update('name')} required type="text" value={form.name} /></label>
+          <label>Email<input onChange={update('email')} required type="email" value={form.email} /></label>
+          <label>Sporočilo<textarea onChange={update('message')} required rows={5} value={form.message} /></label>
+          <label className="form-honeypot" aria-hidden="true">
+            Spletna stran
+            <input autoComplete="off" name="website" onChange={update('website')} tabIndex="-1" value={form.website} />
+          </label>
+          <button className="btn-premium main-btn-primary" disabled={status.type === 'sending'} type="submit">
+            {status.type === 'sending' ? 'Pošiljanje ...' : 'Pošlji'}
+          </button>
+          <p aria-live="polite" className={`form-status form-status-${status.type}`}>
+            {status.message}
+          </p>
         </form>
       </div>
     </section>

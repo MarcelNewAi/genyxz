@@ -1,27 +1,36 @@
-# ⚡ Step 4 — Netlify Functions
+# Netlify Functions
 
-> **This file will be defined per project.** The specific functions, endpoints, and implementation details depend on the client's requirements.
+## Resend Form Email
 
-> **Prerequisites:** Steps 1-3 complete. `netlify.toml` configured. Netlify CLI linked.
-> **Context7:** Use Context7 MCP server to fetch latest Netlify Functions v2 docs before implementing.
+`netlify/functions/send-form.js` handles both public forms through `POST /api/send-form`:
 
----
+- `type: "contact"` sends contact messages.
+- `type: "application"` sends ambassador applications.
 
-## Functions to Build
+The function validates and escapes submitted values, rejects honeypot submissions, rate-limits requests, and sends distinct HTML emails through Resend.
 
-- No Netlify Functions required for this project configuration yet.
+## Environment Variables
 
----
+Copy `.env.example` to `.env` for local development and replace the placeholder API key:
+
+```text
+RESEND_API_KEY=re_replace_with_api_key
+RESEND_FROM_EMAIL=forms@genyxz.si
+RESEND_TO_EMAIL=info@genyxz.si
+```
+
+Before production deployment:
+
+1. Verify `genyxz.si` in Resend.
+2. Add all three variables in Netlify with Functions scope.
+3. Keep `.env` private; it is ignored by Git.
 
 ## Verification
+
+Run the site and functions together:
 
 ```bash
 netlify dev
 ```
 
-- [ ] All functions respond correctly via `netlify dev`
-- [ ] All form components work end-to-end
-
-```bash
-git add -A && git commit -m "Step 4: Netlify Functions"
-```
+Submit both forms and confirm their distinct emails arrive at `info@genyxz.si` with the submitter set as Reply-To.

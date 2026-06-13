@@ -96,6 +96,7 @@
     "label": "Prijava",
     "title": "Prijavi se",
     "subtitle": "Samo povej, kdo si.",
+    "field_name_label": "Ime in priimek",
     "field1_label": "Zakaj te to zanima?",
     "field2_label": "Kaj te trenutno najbolj motivira?",
     "field3_label": "Katera pot ti je bližje?",

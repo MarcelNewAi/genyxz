@@ -6,7 +6,7 @@ function LogoWordmark() {
   const { t } = useTranslation()
   const title = t('site.title')
 
-  return <img alt={title} className="brand-logo" src="/locales/sl/dna-logo-bg.svg" />
+  return <img alt={title} className="brand-logo brand-logo-nav" height="145" src="/Logo - GenYXZ.svg" width="500" />
 }
 
 export default function Navbar({ variant = 'main' }) {
