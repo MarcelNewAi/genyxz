@@ -1,6 +1,5 @@
 ﻿import {
   IconInstagram,
-  IconLinkedIn,
   IconPrivacy,
   IconTerms,
   IconTiktok,
@@ -45,17 +44,23 @@ export default function Footer() {
           <div className="footer-column">
             <p className="footer-heading">{t('footer.social_heading')}</p>
             <div className="footer-socials">
-              <a href="#social" aria-label={t('footer.social_1')}>
+              <a
+                href="https://www.instagram.com/genyxz.si?igsh=MWN1N29peXppc3dxNA=="
+                aria-label={t('footer.social_1')}
+                target="_blank"
+                rel="noreferrer"
+              >
                 <IconInstagram />
                 <span>{t('footer.social_1')}</span>
               </a>
-              <a href="#social" aria-label={t('footer.social_2')}>
+              <a
+                href="https://www.tiktok.com/@genyxz.si?_r=1&amp;_t=ZN-98YKIYRFi3W"
+                aria-label={t('footer.social_2')}
+                target="_blank"
+                rel="noreferrer"
+              >
                 <IconTiktok />
                 <span>{t('footer.social_2')}</span>
-              </a>
-              <a href="#social" aria-label={t('footer.social_3')}>
-                <IconLinkedIn />
-                <span>{t('footer.social_3')}</span>
               </a>
             </div>
           </div>
