@@ -1,5 +1,6 @@
 ﻿import { useEffect, useState } from 'react'
 import ApplicationForm from './components/ApplicationForm'
+import AmbassadorVideo from './components/AmbassadorVideo'
 import Benefits from './components/Benefits'
 import ChoosePath from './components/ChoosePath'
 import FinalCta from './components/FinalCta'
@@ -71,6 +72,7 @@ function App() {
       <ChoosePath />
       <Benefits />
       <LookingFor />
+      <AmbassadorVideo />
       <ApplicationForm />
       <FinalCta />
       <Footer />

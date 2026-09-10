@@ -16,7 +16,8 @@
     "izberi_pot": "04 — Izberi svojo pot",
     "kaj_pridobis": "05 — Kaj pridobiš",
     "koga_iscemo": "06 — Koga iščemo",
-    "prijava": "07 — Prijava"
+    "video": "07 — Spoznaj zgodbo",
+    "prijava": "08 — Prijava"
   },
   "nav": {
     "hero": "Hero",
@@ -91,6 +92,14 @@
     "trait1": "energija",
     "trait2": "komunikativnost",
     "trait3": "radovednost"
+  },
+  "video": {
+    "label": "Spoznaj zgodbo",
+    "title": "Poglej, kaj pomeni biti del GenYXZ.",
+    "description": "V manj kot 2 minutah spoznaj idejo, energijo in ljudi, ki soustvarjajo prihodnost zdravja.",
+    "aria_label": "Video o GenYXZ ambasadorjih",
+    "caption": "Zgodba GenYXZ ambasadorjev",
+    "fallback": "Tvoj brskalnik ne podpira predvajanja videa."
   },
   "prijava": {
     "label": "Prijava",
@@ -169,6 +178,7 @@
     "izberi_label": "04 — IZBERI SVOJO POT",
     "kaj_label": "05 — KAJ PRIDOBIŠ",
     "koga_label": "06 — KOGA IŠČEMO",
-    "prijava_label": "07 — PRIJAVA"
+    "video_label": "07 — SPOZNAJ ZGODBO",
+    "prijava_label": "08 — PRIJAVA"
   }
 }
