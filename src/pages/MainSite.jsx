@@ -67,7 +67,7 @@ const workPillars = [
     number: '01',
   },
   {
-    body: 'Od preventivnih rešitev do sodobnih zdravstvenih storitev. Ambasador usmerja, ne prodaja.',
+    body: 'Od preventivnih rešitev do sodobnih zdravstvenih storitev. Ambasador odpira pogovore in ustvarja prodajne priložnosti; strokovno svetovanje vodi licencirani svetovalec.',
     heading: 'Povezujemo ljudi z relevantnimi informacijami',
     icon: <IconNetwork />,
     id: 'two',
@@ -96,7 +96,7 @@ const workScenarios = [
     title: 'Manjši dogodek ali predstavitev',
   },
   {
-    body: 'Nekdo iz ambasadorjeve mreže postavi vprašanje o preventivi ali sodobnih zdravstvenih pristopih. Ambasador se pogovori, razloži, usmeri. Ne prodaja - povezuje z relevantnimi informacijami in partnerji.',
+    body: 'Nekdo iz ambasadorjeve mreže postavi vprašanje o preventivi ali sodobnih zdravstvenih pristopih. Ambasador odpre pogovor, prisluhne in predstavi relevantno možnost. Če oseba želi izvedeti več, organizira pogovor z licenciranim svetovalcem.',
     id: 'two',
     title: 'Pogovor z nekom, ki ga tema zanima',
   },

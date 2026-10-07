@@ -4366,6 +4366,170 @@ body {
   }
 }
 
+.ambassador-role-info {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.ambassador-role-facts {
+  padding: clamp(1.1rem, 3vw, 1.6rem);
+  border: 1px solid rgba(43, 174, 186, 0.27);
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(43, 174, 186, 0.08), rgba(126, 35, 146, 0.06));
+}
+
+.ambassador-role-facts h3 {
+  margin-bottom: 0.7rem;
+  color: #111111;
+}
+
+.ambassador-role-facts ul,
+.ambassador-role-content ul {
+  margin: 0;
+  padding-left: 1.35rem;
+}
+
+.ambassador-role-facts li + li,
+.ambassador-role-content li + li {
+  margin-top: 0.45rem;
+}
+
+.ambassador-role-facts li::marker,
+.ambassador-role-content li::marker {
+  color: var(--color-accent-purple);
+}
+
+.ambassador-role-details {
+  border: 1px solid rgba(17, 17, 17, 0.13);
+  border-radius: 16px;
+  background: #ffffff;
+}
+
+.ambassador-role-details summary {
+  position: relative;
+  display: grid;
+  gap: 0.2rem;
+  padding: 1rem 3rem 1rem 1.2rem;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.ambassador-role-details summary::marker {
+  color: var(--color-accent-purple);
+}
+
+.ambassador-role-details summary::after {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  right: 1.2rem;
+  color: var(--color-accent-purple);
+  font-size: 1.5rem;
+  font-weight: 400;
+  transform: translateY(-50%);
+}
+
+.ambassador-role-details[open] summary::after {
+  content: "−";
+}
+
+.ambassador-role-details summary small {
+  color: var(--color-text-secondary);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.ambassador-role-details summary:focus-visible,
+.graduate-status input:focus-visible,
+.role-acknowledgment input:focus-visible {
+  outline: 3px solid var(--color-accent-teal);
+  outline-offset: 3px;
+}
+
+.ambassador-role-content {
+  display: grid;
+  gap: 0.8rem;
+  padding: 0 1.2rem 1.4rem;
+}
+
+.ambassador-role-content h3 {
+  margin-top: 0.4rem;
+}
+
+.ambassador-role-content h4 {
+  margin: 0.8rem 0 0;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+
+.ambassador-role-content p,
+.ambassador-role-content li {
+  line-height: 1.65;
+}
+
+.application-extra-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.graduate-status {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.graduate-status legend {
+  margin-bottom: 0.45rem;
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 640;
+}
+
+.graduate-status-options {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+  min-height: 54px;
+}
+
+.graduate-status-options label,
+.role-acknowledgment {
+  display: flex;
+  gap: 0.65rem;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.graduate-status-options input,
+.role-acknowledgment input {
+  flex: none;
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-top: 0.2rem;
+  accent-color: var(--color-accent-purple);
+}
+
+.role-acknowledgment {
+  padding: 1rem;
+  border-radius: 14px;
+  background: rgba(43, 174, 186, 0.08);
+  line-height: 1.5;
+}
+
+@media (max-width: 767px) {
+  .application-extra-fields {
+    grid-template-columns: 1fr;
+    gap: 0.82rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .main-hero-helix {
     transform: translateY(-48%);

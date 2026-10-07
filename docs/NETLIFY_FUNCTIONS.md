@@ -17,12 +17,13 @@ Copy `.env.example` to `.env` for local development and replace the placeholder 
 RESEND_API_KEY=re_replace_with_api_key
 RESEND_FROM_EMAIL=forms@genyxz.si
 RESEND_TO_EMAIL=info@genyxz.si
+RESEND_APPLICATION_TO_EMAIL=ambasador@genyxz.si
 ```
 
 Before production deployment:
 
 1. Verify `genyxz.si` in Resend.
-2. Add all three variables in Netlify with Functions scope.
+2. Add all four variables in Netlify with Functions scope.
 3. Keep `.env` private; it is ignored by Git.
 
 ## Verification
@@ -35,5 +36,5 @@ netlify dev
 
 Submit both forms and confirm:
 
-- Their distinct internal emails arrive at `info@genyxz.si` with the submitter set as Reply-To.
+- Contact messages arrive at `info@genyxz.si` and ambassador applications at `ambasador@genyxz.si`, with the submitter set as Reply-To.
 - The submitter receives the matching contact or ambassador confirmation email.

@@ -2,12 +2,17 @@ import { Resend } from 'resend'
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const MAX_LENGTHS = {
+  birthYear: 4,
   email: 254,
   message: 5000,
   motivation: 5000,
   name: 120,
   phone: 60,
   reason: 5000,
+  residence: 120,
+  studyProgram: 120,
+  studyYear: 60,
+  workRegion: 120,
 }
 
 const json = (body, status = 200) =>
@@ -34,7 +39,7 @@ function normalizePayload(payload) {
   )
 }
 
-function validate(payload) {
+export function validate(payload) {
   if (!payload || typeof payload !== 'object' || !['application', 'contact'].includes(payload.type)) {
     return 'Neveljavna vrsta obrazca.'
   }
@@ -46,7 +51,7 @@ function validate(payload) {
   const required =
     payload.type === 'contact'
       ? ['name', 'email', 'message']
-      : ['name', 'email', 'phone', 'path', 'reason', 'motivation']
+      : ['name', 'email', 'phone', 'path', 'reason', 'motivation', 'birthYear', 'studyProgram', 'studyYear', 'graduateStatus', 'residence', 'workRegion']
 
   if (required.some((field) => typeof payload[field] !== 'string' || !payload[field])) {
     return 'Izpolni vsa zahtevana polja.'
@@ -64,6 +69,21 @@ function validate(payload) {
 
   if (payload.type === 'application' && !['community', 'lifestyle'].includes(payload.path)) {
     return 'Izberi veljavno pot ambasadorja.'
+  }
+
+  if (payload.type === 'application') {
+    const birthYear = Number(payload.birthYear)
+    if (!/^\d{4}$/.test(payload.birthYear) || birthYear < 1900 || birthYear > new Date().getFullYear()) {
+      return 'Vnesi veljavno letnico rojstva.'
+    }
+
+    if (!['yes', 'no'].includes(payload.graduateStatus)) {
+      return 'Izberi, ali si absolvent oziroma absolventka.'
+    }
+
+    if (payload.roleAcknowledged !== true) {
+      return 'Pred oddajo potrdi, da si prebral oziroma prebrala opis vloge.'
+    }
   }
 
   return null
@@ -107,7 +127,7 @@ function buildContactEmail(payload) {
   }
 }
 
-function buildApplicationEmail(payload) {
+export function buildApplicationEmail(payload) {
   const path = payload.path === 'community' ? 'Community Ambassador' : 'Lifestyle Ambassador'
 
   return {
@@ -117,9 +137,16 @@ function buildApplicationEmail(payload) {
         row('Ime in priimek', payload.name) +
         row('Email', payload.email) +
         row('Telefon', payload.phone) +
+        row('Letnica rojstva', payload.birthYear) +
+        row('Smer študija', payload.studyProgram) +
+        row('Letnik študija', payload.studyYear) +
+        row('Absolvent', payload.graduateStatus === 'yes' ? 'Da' : 'Ne') +
+        row('Kraj bivanja', payload.residence) +
+        row('Želena regija dela', payload.workRegion) +
         row('Izbrana pot', path) +
         row('Zakaj ga to zanima', payload.reason) +
-        row('Kaj ga trenutno najbolj motivira', payload.motivation),
+        row('Kaj ga trenutno najbolj motivira', payload.motivation) +
+        row('Potrditev seznanitve z vlogo', 'Da'),
       eyebrow: 'Nova prijava za ambasadorja',
       title: path,
     }),
@@ -175,7 +202,9 @@ export default async function handler(request) {
 
   const apiKey = getEnv('RESEND_API_KEY')
   const fromEmail = getEnv('RESEND_FROM_EMAIL')
-  const toEmail = getEnv('RESEND_TO_EMAIL')
+  const contactToEmail = getEnv('RESEND_TO_EMAIL')
+  const applicationToEmail = getEnv('RESEND_APPLICATION_TO_EMAIL')
+  const toEmail = payload.type === 'contact' ? contactToEmail : applicationToEmail
 
   if (!apiKey || !fromEmail || !toEmail || apiKey === 're_replace_with_api_key') {
     console.error('Resend environment variables are not configured.')
