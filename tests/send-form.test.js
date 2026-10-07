@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import process from 'node:process'
 import test from 'node:test'
-import handler, { buildApplicationEmail, validate } from './send-form.js'
+import handler, { buildApplicationEmail, validate } from '../netlify/functions/send-form.js'
 
 const application = {
   birthYear: '2002',
