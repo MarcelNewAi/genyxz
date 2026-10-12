@@ -1,10 +1,23 @@
+import { useRef } from 'react'
 import { useTranslation } from '../utils/useTranslation'
 
 export default function AmbassadorRoleDetails() {
   const { t } = useTranslation()
+  const contentRef = useRef(null)
   const facts = [1, 2, 3, 4].map((number) => t(`role.fact${number}`))
   const tasks = [1, 2, 3, 4, 5, 6].map((number) => t(`role.task${number}`))
   const suitability = [1, 2, 3, 4, 5, 6].map((number) => t(`role.fit${number}`))
+
+  const handleToggle = (event) => {
+    if (!event.currentTarget.open) return
+
+    requestAnimationFrame(() => {
+      contentRef.current?.scrollIntoView({
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+        block: 'start',
+      })
+    })
+  }
 
   return (
     <div className="ambassador-role-info">
@@ -15,12 +28,12 @@ export default function AmbassadorRoleDetails() {
         </ul>
       </div>
 
-      <details className="ambassador-role-details">
+      <details className="ambassador-role-details" onToggle={handleToggle}>
         <summary>
           <span>{t('role.toggle')}</span>
           <small>{t('role.hint')}</small>
         </summary>
-        <div className="ambassador-role-content">
+        <div className="ambassador-role-content" ref={contentRef}>
           <h3>{t('role.title')}</h3>
           <h4>{t('role.what_title')}</h4>
           <p>{t('role.what_text')}</p>
