@@ -53,8 +53,8 @@ export default function AmbassadorRoleDetails() {
           <p>{t('role.time_text')}</p>
 
           <h4>{t('role.payment_title')}</h4>
-          <p>{t('role.payment_text1')}</p>
-          <p>{t('role.payment_text2')}</p>
+          <p><strong>{t('role.payment_label1')}</strong> {t('role.payment_text1')}</p>
+          <p><strong>{t('role.payment_label2')}</strong> {t('role.payment_text2')}</p>
 
           <h4>{t('role.career_title')}</h4>
           <p>{t('role.career_text1')}</p>
